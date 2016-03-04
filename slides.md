@@ -1,16 +1,14 @@
-class: middle
+class: middle, dark
 
 # Migrating an app to Ember
-
-### Component After Component
+## Component by Component
 
 ---
 
-class: middle
+class: middle, light
 
 # Xavier Cambar
-
-# PeopleDoc
+## PeopleDoc
 
 ???
 
@@ -23,7 +21,7 @@ class: middle
 
 ---
 
-class: middle
+class: middle, blue
 
 # Backstory
 
@@ -36,20 +34,19 @@ class: middle
 
 ---
 
-class: middle
+class: middle, dark
 
-# Manager: "Ember all the things!"
+## Manager:
+# "Ember all the things!"
+
 
 ---
 
-class: middle
+class: middle, blue
 
-# Step 1: brand new app
-
-### aka "The appetizers"
-
-* Brand new project
-* Ideal Ember context
+## Step 1
+# Brand new app
+### aka "the appetizers"
 
 ???
 
@@ -63,14 +60,19 @@ class: middle
 
 ---
 
-class: middle
+class: middle, blue
 
-# Step 2: Biggest app in the company
+#### Brand **new project**
+##### ===
+#### **Ideal** Ember context
 
+---
+
+class: middle, dark
+
+## Step 2
+# Biggest app in the company
 ### aka "OMFG"
-
-* Market is very demanding
-* Features are constantly landed
 
 ???
 
@@ -88,11 +90,18 @@ class: middle
 
 ---
 
-class: middle
+class: middle, dark
+
+#### Market is very demanding
+##### - & -
+#### Features are constantly landed
+
+---
+
+class: middle, light
 
 # ...you just can't start over
-
-### Zeno's Achilles paradox is real
+## Zeno's Achilles paradox is real
 
 .center[<img width="100%" src="Zeno_tortoise.png"/>]
 
@@ -107,9 +116,10 @@ class: middle
 
 ---
 
-class: middle
+class: middle, blue
 
-# Epiphanies (from the trenches)
+# Epiphanies
+## From the trenches
 
 ???
 
@@ -119,11 +129,10 @@ class: middle
 
 ---
 
-class: middle
+class: middle, dark
 
-# Epiphany Nr 1
-
-## Components are the best, and your app is one
+## Epiphany no 1
+# Components are the best, and your app is one
 
 ???
 
@@ -133,11 +142,10 @@ class: middle
 
 ---
 
-class: middle
+class: middle, blue
 
-# Epiphany Nr 2
-
-## Your Ember app lives in a hostile world
+## Epiphany no 2
+# Your Ember app lives in a hostile world
 
 ???
 
@@ -151,14 +159,18 @@ class: middle
 
 ---
 
-class: middle
+class: middle, light
 
 # Considerations for an easier life
 
-1. What part of the app will we migrate first?
-1. How to properly bootstrap the app?
-1. What's the communication workflow?
-1. How to integrate the build process?
+---
+
+class: middle, light, considerations
+
+#### 1. What part of the app will we migrate first?
+#### 2. How to properly bootstrap the app?
+#### 3. What's the communication workflow?
+#### 4. How to integrate the build process?
 
 <!--- 1. When to let the app manage data? --->
 <!--- 1. When to migrate the API? --->
@@ -172,12 +184,17 @@ class: middle
 
 ---
 
-class: middle
+class: middle, dark
 
 # What part of the app will we migrate first?
 
-* The most repeated component?
-* The most significant component?
+---
+
+class: middle, dark
+
+#### The most **repeated** component?
+##### - OR -
+#### The most **significant** component?
 
 ???
 
@@ -191,7 +208,7 @@ class: middle
 
 ---
 
-class: middle
+class: middle, light
 
 # What's the plan?
 
@@ -210,7 +227,7 @@ unless you're using Ember Islands, see later.
 
 ---
 
-class: middle
+class: middle, light
 
 # What's the plan?
 
@@ -218,7 +235,7 @@ class: middle
 
 ---
 
-class: middle
+class: middle, light
 
 # What's the plan?
 
@@ -226,7 +243,7 @@ class: middle
 
 ---
 
-class: middle
+class: middle, light
 
 # What's the plan?
 
@@ -234,7 +251,7 @@ class: middle
 
 ---
 
-class: middle
+class: middle, light
 
 # What's the plan?
 
@@ -242,13 +259,17 @@ class: middle
 
 ---
 
-class: middle
+class: middle, blue
 
-# How to properly bootstrap the app?
+# How to bootstrap the app?
 
-* at the right time
-* at the right place
-* with the right data
+---
+
+class: middle, blue, bootstrapping
+
+* At the **right time**
+* At the **right place**
+* With the **right data**
 
 ???
 
@@ -260,7 +281,7 @@ class: middle
 
 ---
 
-class: center,middle
+class: middle,
 
 .center[<img src="Init - pre.png"/>]
 
@@ -280,9 +301,7 @@ class: center,middle
 
 ---
 
-class: middle
-
-.red[**Warning:**] Ember ≥ 2.3
+class: middle, light
 
 ```js
 let app = MyApp.create({ autoboot: false });
@@ -298,9 +317,11 @@ let app = MyApp.create({ autoboot: false });
   });
 ```
 
+## .red[**Warning:**] Ember ≥ 2.3
+
 ---
 
-class: middle
+class: middle, light
 
 # Going further
 
@@ -308,7 +329,7 @@ class: middle
 
 ---
 
-class: middle
+class: middle, light
 
 # Going further
 
@@ -316,9 +337,10 @@ class: middle
 
 ---
 
-class: middle
+class: middle, light
 
-# Going further: Ember Islands
+## Going further:
+# Ember Islands
 
 ```html
 // app/templates/application.hbs
@@ -341,7 +363,7 @@ class: middle
 
 ---
 
-class: middle
+class: middle, blue
 
 # What's the communication workflow?
 
@@ -354,7 +376,7 @@ class: middle
 
 ---
 
-class: middle
+class: middle, dark
 
 # Data Down, Actions Up
 
@@ -362,7 +384,7 @@ class: middle
 
 ---
 
-class: middle
+class: middle, light
 
 # Use Services for shared data
 
@@ -384,9 +406,14 @@ export default Ember.Service.extend({
 
 ---
 
-class: middle
+class: middle, blue
 
-# Actions Up: Emit events
+## Actions Up:
+# Emit events
+
+---
+
+class: middle, light
 
 ```js
 // app/app.js
@@ -419,9 +446,14 @@ theApp.on('updateFacets', reloadDataTable);
 
 ---
 
-class: middle
+class: middle, blue
 
-# Data down: Expose a simple API
+## Data down:
+# Expose a simple API
+
+---
+
+class: middle, light
 
 ```js
 // app/app.js
@@ -448,9 +480,13 @@ theApp.resetFacets().then(showFlashMessage);
 
 ---
 
-class: middle
+class: middle, blue
 
 # (WIP) How to integrate the build process?
+
+---
+
+class: middle, light
 
 * Content hooks are amazing...ly binding
 * Integrate ember-cli in the build pipeline of the host app?
@@ -467,9 +503,13 @@ class: middle
 
 ---
 
-class: middle
+class: middle, dark
 
 # Ember integrates very well in existing apps
+
+---
+
+class: middle, light
 
 * Great opportunity for more teams and companies to give Ember a try
 * Obvious use case for companies, yet non-obvious to the community
@@ -481,3 +521,12 @@ class: middle
 * Tooling and APIs are moving in the right direction
 * Lack of documentation is on the community (aka, me)
 
+---
+
+class: middle, blue
+
+# Thank you!
+### Questions?
+## Xavier Cambar - PeopleDoc
+
+---
