@@ -1,7 +1,7 @@
 class: middle, dark
 
 # Migrating an app to Ember
-## Component by Component
+## Component after Component
 
 ---
 
@@ -9,6 +9,8 @@ class: middle, light
 
 # Xavier Cambar
 ## PeopleDoc
+
+<!-- PD logo, twitter, github -->
 
 ???
 
@@ -90,6 +92,12 @@ class: middle, dark
 
 ---
 
+class: middle, light
+
+# ...you just can't start over
+
+---
+
 class: middle, dark
 
 #### Market is very demanding
@@ -100,10 +108,8 @@ class: middle, dark
 
 class: middle, light
 
-# ...you just can't start over
-## Zeno's Achilles paradox is real
-
 .center[<img width="100%" src="Zeno_tortoise.png"/>]
+## Zeno's Achilles paradox is real
 
 ???
 
@@ -163,20 +169,11 @@ class: middle, light
 
 # Considerations for an easier life
 
----
-
-class: middle, light, considerations
-
-#### 1. What part of the app will we migrate first?
-#### 2. How to properly bootstrap the app?
-#### 3. What's the communication workflow?
-#### 4. How to integrate the build process?
-
-<!--- 1. When to let the app manage data? --->
-<!--- 1. When to migrate the API? --->
-<!--- 1. How to build? --->
-
 ???
+1. What part of the app will we migrate first?
+2. How to properly bootstrap the app?
+3. What's the communication workflow?
+4. How to integrate the build process?
 
 * Biggest consideration: Smooth transition
 * Move fast, don't break
@@ -186,6 +183,7 @@ class: middle, light, considerations
 
 class: middle, dark
 
+## Consideration no 1
 # What part of the app will we migrate first?
 
 ---
@@ -206,11 +204,11 @@ class: middle, dark
 
 * We opted for the second strategy, because we're doing business software
 
+ - So what's the plan?
+
 ---
 
 class: middle, light
-
-# What's the plan?
 
 .center[<img src="Step 0.png"/>]
 
@@ -229,15 +227,11 @@ unless you're using Ember Islands, see later.
 
 class: middle, light
 
-# What's the plan?
-
 .center[<img src="Step 1.png"/>]
 
 ---
 
 class: middle, light
-
-# What's the plan?
 
 .center[<img src="Step 2.png"/>]
 
@@ -245,15 +239,11 @@ class: middle, light
 
 class: middle, light
 
-# What's the plan?
-
 .center[<img src="Step 3.png"/>]
 
 ---
 
 class: middle, light
-
-# What's the plan?
 
 .center[<img src="Step 4.png"/>]
 
@@ -261,17 +251,14 @@ class: middle, light
 
 class: middle, blue
 
+## Consideration no 2
 # How to bootstrap the app?
 
----
-
-class: middle, blue, bootstrapping
+???
 
 * At the **right time**
 * At the **right place**
 * With the **right data**
-
-???
 
 * You most likely don't have an API at hand.
 * Start your Ember APP with what you have
@@ -319,11 +306,17 @@ let app = MyApp.create({ autoboot: false });
 
 ## .red[**Warning:**] Ember ≥ 2.3
 
+
+---
+
+class: middle, blue
+
+# Going further
+
+
 ---
 
 class: middle, light
-
-# Going further
 
 .center[<img src="Step 1.png"/>]
 
@@ -331,16 +324,13 @@ class: middle, light
 
 class: middle, light
 
-# Going further
-
 .center[<img src="Step 2.png"/>]
 
 ---
 
 class: middle, light
 
-## Going further:
-# Ember Islands
+## Ember Islands
 
 ```html
 // app/templates/application.hbs
@@ -365,6 +355,7 @@ class: middle, light
 
 class: middle, blue
 
+## Consideration no 3
 # What's the communication workflow?
 
 ???
@@ -376,9 +367,9 @@ class: middle, blue
 
 ---
 
-class: middle, dark
+class: middle, light
 
-# Data Down, Actions Up
+## Data Down, Actions Up
 
 .center[<img src="DDAU.png"/>]
 
@@ -386,7 +377,7 @@ class: middle, dark
 
 class: middle, light
 
-# Use Services for shared data
+## Use Services for shared data
 
 ```js
 // app/services/facets.js
@@ -406,10 +397,10 @@ export default Ember.Service.extend({
 
 ---
 
-class: middle, blue
+class: middle, dark
 
-## Actions Up:
-# Emit events
+# Actions Up
+### Emit events
 
 ---
 
@@ -446,10 +437,10 @@ theApp.on('updateFacets', reloadDataTable);
 
 ---
 
-class: middle, blue
+class: middle, dark
 
-## Data down:
-# Expose a simple API
+# Data down
+### Expose a simple API
 
 ---
 
@@ -482,7 +473,8 @@ theApp.resetFacets().then(showFlashMessage);
 
 class: middle, blue
 
-# (WIP) How to integrate the build process?
+## Consideration no 4
+# How to integrate the build process?
 
 ---
 
@@ -529,4 +521,4 @@ class: middle, blue
 ### Questions?
 ## Xavier Cambar - PeopleDoc
 
----
+<!-- github twitter -->
