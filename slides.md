@@ -1,11 +1,11 @@
-class: middle, dark
+class: middle, light, factory
 
 # Migrating an app to Ember
 ## Component after Component
 
 ---
 
-class: middle, light
+class: middle, light, factory
 
 # Xavier Cambar
 ## PeopleDoc
@@ -23,7 +23,7 @@ class: middle, light
 
 ---
 
-class: middle, blue
+class: middle, park
 
 # Backstory
 
@@ -36,7 +36,7 @@ class: middle, blue
 
 ---
 
-class: middle, dark
+class: middle, park
 
 ## Manager:
 # "Ember all the things!"
@@ -44,11 +44,11 @@ class: middle, dark
 
 ---
 
-class: middle, blue
+class: middle, park
 
 ## Step 1
 # Brand new app
-### aka "the appetizers"
+### new project, *ideal* context
 
 ???
 
@@ -62,24 +62,14 @@ class: middle, blue
 
 ---
 
-class: middle, blue
-
-#### Brand **new project**
-##### ===
-#### **Ideal** Ember context
-
----
-
-class: middle, dark
+class: middle, park
 
 ## Step 2
-# Biggest app in the company
-### aka "OMFG"
+# Major app in the company
+### aka "Down the rabbit hole"
 
 ???
 
-* Already added Ember to our stack
-* 2 frontend developers
 * Server-side rendered application
 * Python developers hate frontend code
 * For good reasons: frontend tooling in Django was awful (another story)
@@ -92,13 +82,15 @@ class: middle, dark
 
 ---
 
-class: middle, light
+class: middle, light, park
 
-# ...you just can't start over
+## In the real world
+# you just can't
+# start over
 
 ---
 
-class: middle, dark
+class: middle, park
 
 #### Market is very demanding
 ##### - & -
@@ -106,7 +98,7 @@ class: middle, dark
 
 ---
 
-class: middle, light
+class: middle, light, park
 
 .center[<img width="100%" src="Zeno_tortoise.png"/>]
 ## Zeno's Achilles paradox is real
@@ -122,10 +114,10 @@ class: middle, light
 
 ---
 
-class: middle, blue
+class: middle, dinos
 
 # Epiphanies
-## From the trenches
+### From the trenches
 
 ???
 
@@ -135,7 +127,7 @@ class: middle, blue
 
 ---
 
-class: middle, dark
+class: middle, dinos
 
 ## Epiphany no 1
 # Components are the best, and your app is one
@@ -148,7 +140,7 @@ class: middle, dark
 
 ---
 
-class: middle, blue
+class: middle, dinos
 
 ## Epiphany no 2
 # Your Ember app lives in a hostile world
@@ -165,7 +157,7 @@ class: middle, blue
 
 ---
 
-class: middle, light
+class: middle, factory2
 
 # Considerations for an easier life
 
@@ -181,17 +173,17 @@ class: middle, light
 
 ---
 
-class: middle, dark
+class: middle, factory2
 
 ## Consideration no 1
 # What part of the app will we migrate first?
 
 ---
 
-class: middle, dark
+class: middle, factory2
 
 #### The most **repeated** component?
-##### - OR -
+##### - or -
 #### The most **significant** component?
 
 ???
@@ -204,11 +196,11 @@ class: middle, dark
 
 * We opted for the second strategy, because we're doing business software
 
- - So what's the plan?
+* So what's the plan?
 
 ---
 
-class: middle, light
+class: middle, light, factory2
 
 .center[<img src="Step 0.png"/>]
 
@@ -225,31 +217,31 @@ unless you're using Ember Islands, see later.
 
 ---
 
-class: middle, light
+class: middle, light, factory2
 
 .center[<img src="Step 1.png"/>]
 
 ---
 
-class: middle, light
+class: middle, light, factory2
 
 .center[<img src="Step 2.png"/>]
 
 ---
 
-class: middle, light
+class: middle, light, factory2
 
 .center[<img src="Step 3.png"/>]
 
 ---
 
-class: middle, light
+class: middle, light, factory2
 
 .center[<img src="Step 4.png"/>]
 
 ---
 
-class: middle, blue
+class: middle, factory2
 
 ## Consideration no 2
 # How to bootstrap the app?
@@ -264,17 +256,17 @@ class: middle, blue
 * Start your Ember APP with what you have
 * Don't require more than you have
 * Let the host application control the application flow
-* data === context
+* data === state === context
 
 ---
 
-class: middle,
+class: middle, factory2
 
 .center[<img src="Init - pre.png"/>]
 
 ---
 
-class: center,middle
+class: center, middle, factory2
 
 .center[<img src="Step 1.png"/>]
 
@@ -288,7 +280,7 @@ class: center,middle
 
 ---
 
-class: middle, light
+class: middle, light, factory2
 
 ```js
 let app = MyApp.create({ autoboot: false });
@@ -309,28 +301,27 @@ let app = MyApp.create({ autoboot: false });
 
 ---
 
-class: middle, blue
+class: middle, light, factory2
 
-# Going further
+## Multiple roots with
+# Ember Islands
 
 
 ---
 
-class: middle, light
+class: middle, light, factory2
 
 .center[<img src="Step 1.png"/>]
 
 ---
 
-class: middle, light
+class: middle, light, factory2
 
 .center[<img src="Step 2.png"/>]
 
 ---
 
-class: middle, light
-
-## Ember Islands
+class: middle, light, factory2
 
 ```html
 // app/templates/application.hbs
@@ -344,6 +335,8 @@ class: middle, light
 <div data-component='my-other-component'></div>
 ```
 
+### <small>*Hint: Keep configuration in Javascript*</small>
+
 ???
 
 * RTFM
@@ -353,10 +346,10 @@ class: middle, light
 
 ---
 
-class: middle, blue
+class: middle, factory2
 
 ## Consideration no 3
-# What's the communication workflow?
+# Communication workflow
 
 ???
 
@@ -367,7 +360,7 @@ class: middle, blue
 
 ---
 
-class: middle, light
+class: middle, light, factory2
 
 ## Data Down, Actions Up
 
@@ -375,9 +368,9 @@ class: middle, light
 
 ---
 
-class: middle, light
+class: middle, light, factory2
 
-## Use Services for shared data
+## Services for state
 
 ```js
 // app/services/facets.js
@@ -397,14 +390,14 @@ export default Ember.Service.extend({
 
 ---
 
-class: middle, dark
+class: middle, factory2
 
 # Actions Up
 ### Emit events
 
 ---
 
-class: middle, light
+class: middle, light, factory2
 
 ```js
 // app/app.js
@@ -437,14 +430,14 @@ theApp.on('updateFacets', reloadDataTable);
 
 ---
 
-class: middle, dark
+class: middle, factory2
 
 # Data down
 ### Expose a simple API
 
 ---
 
-class: middle, light
+class: middle, light, factory2
 
 ```js
 // app/app.js
@@ -471,18 +464,25 @@ theApp.resetFacets().then(showFlashMessage);
 
 ---
 
-class: middle, blue
+class: middle, factory2
 
 ## Consideration no 4
-# How to integrate the build process?
+# Build process
 
 ---
 
-class: middle, light
+class: middle, light, factory2
 
-* Content hooks are amazing...ly binding
-* Integrate ember-cli in the build pipeline of the host app?
-* Don't build, only integrate the `/dist` folder?
+# .red[Warning]
+### No generic solutions ahead
+
+---
+
+class: middle, left, light, factory2
+
+#### `index.html` and content hooks are hard
+#### Separate builds as much as possible
+#### Very dependent on the host app
 
 ???
 
@@ -495,17 +495,20 @@ class: middle, light
 
 ---
 
-class: middle, dark
+class: middle, factory, fernsehturm
 
-# Ember integrates very well in existing apps
+## Conclusion
+# Embedding<br>Ember is easy
+
+### Start migrating your apps now!
 
 ---
 
-class: middle, light
+class: middle, left, light, factory, fernsehturm
 
-* Great opportunity for more teams and companies to give Ember a try
-* Obvious use case for companies, yet non-obvious to the community
-* Yet, considering the variability of contexts, how to make it more visible and accessible?
+#### Great opportunity to try Ember
+#### Non-obvious strategies
+#### How to make it more visible and accessible?
 
 
 ???
@@ -515,10 +518,11 @@ class: middle, light
 
 ---
 
-class: middle, blue
+class: middle, blue, factory, fernsehturm
 
 # Thank you!
 ### Questions?
-## Xavier Cambar - PeopleDoc
+## Xavier Cambar — @xcambar
+## PeopleDoc
 
 <!-- github twitter -->
