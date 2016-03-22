@@ -1,0 +1,17 @@
+@mixin chapter($color) {
+  background-color: change-color($color, $alpha: .84);
+  color: change-color($color, $lightness: 14%);
+  &:after {
+    @content;
+    content: "";
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+  }
+}
+
+

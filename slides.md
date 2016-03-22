@@ -1,11 +1,11 @@
-class: middle, light, factory
+class: middle, factory
 
 # Migrating an app to Ember
 ## Component after Component
 
 ---
 
-class: middle, light, factory
+class: middle, factory
 
 # Xavier Cambar
 ## PeopleDoc
@@ -82,7 +82,7 @@ class: middle, park
 
 ---
 
-class: middle, light, park
+class: middle, park
 
 ## In the real world
 # you just can't
@@ -98,7 +98,7 @@ class: middle, park
 
 ---
 
-class: middle, light, park
+class: middle, park
 
 .center[<img width="100%" src="Zeno_tortoise.png"/>]
 ## Zeno's Achilles paradox is real
@@ -200,7 +200,7 @@ class: middle, factory2
 
 ---
 
-class: middle, light, factory2
+class: middle, factory2
 
 .center[<img src="Step 0.png"/>]
 
@@ -217,25 +217,25 @@ unless you're using Ember Islands, see later.
 
 ---
 
-class: middle, light, factory2
+class: middle, factory2
 
 .center[<img src="Step 1.png"/>]
 
 ---
 
-class: middle, light, factory2
+class: middle, factory2
 
 .center[<img src="Step 2.png"/>]
 
 ---
 
-class: middle, light, factory2
+class: middle, factory2
 
 .center[<img src="Step 3.png"/>]
 
 ---
 
-class: middle, light, factory2
+class: middle, factory2
 
 .center[<img src="Step 4.png"/>]
 
@@ -280,7 +280,7 @@ class: center, middle, factory2
 
 ---
 
-class: middle, light, factory2
+class: middle, factory2
 
 ```js
 let app = MyApp.create({ autoboot: false });
@@ -301,7 +301,7 @@ let app = MyApp.create({ autoboot: false });
 
 ---
 
-class: middle, light, factory2
+class: middle, factory2
 
 ## Multiple roots with
 # Ember Islands
@@ -309,19 +309,19 @@ class: middle, light, factory2
 
 ---
 
-class: middle, light, factory2
+class: middle, factory2
 
 .center[<img src="Step 1.png"/>]
 
 ---
 
-class: middle, light, factory2
+class: middle, factory2
 
 .center[<img src="Step 2.png"/>]
 
 ---
 
-class: middle, light, factory2
+class: middle, factory2
 
 ```html
 // app/templates/application.hbs
@@ -360,7 +360,7 @@ class: middle, factory2
 
 ---
 
-class: middle, light, factory2
+class: middle, factory2
 
 ## Data Down, Actions Up
 
@@ -368,7 +368,7 @@ class: middle, light, factory2
 
 ---
 
-class: middle, light, factory2
+class: middle, factory2
 
 ## Services for state
 
@@ -397,7 +397,7 @@ class: middle, factory2
 
 ---
 
-class: middle, light, factory2
+class: middle, factory2
 
 ```js
 // app/app.js
@@ -437,7 +437,7 @@ class: middle, factory2
 
 ---
 
-class: middle, light, factory2
+class: middle, factory2
 
 ```js
 // app/app.js
@@ -471,14 +471,14 @@ class: middle, factory2
 
 ---
 
-class: middle, light, factory2
+class: middle, factory2
 
 # .red[Warning]
 ### No generic solutions ahead
 
 ---
 
-class: middle, left, light, factory2
+class: middle, left, factory2
 
 #### `index.html` and content hooks are hard
 #### Separate builds as much as possible
@@ -495,7 +495,7 @@ class: middle, left, light, factory2
 
 ---
 
-class: middle, factory, fernsehturm
+class: middle, fernsehturm
 
 ## Conclusion
 # Embedding<br>Ember is easy
@@ -504,7 +504,7 @@ class: middle, factory, fernsehturm
 
 ---
 
-class: middle, left, light, factory, fernsehturm
+class: middle, left, fernsehturm
 
 #### Great opportunity to try Ember
 #### Non-obvious strategies
@@ -518,7 +518,7 @@ class: middle, left, light, factory, fernsehturm
 
 ---
 
-class: middle, blue, factory, fernsehturm
+class: middle, blue, fernsehturm
 
 # Thank you!
 ### Questions?
