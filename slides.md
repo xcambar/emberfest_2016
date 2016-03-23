@@ -43,7 +43,7 @@ class: middle, factory
 class: middle, park
 
 ## In the real world
-# you just can't
+# You just can't
 # start over
 
 ???
@@ -101,16 +101,17 @@ class: middle, dinos
 
 class: middle, factory2
 
-# Towards <br>an easier life
+# Key topics
+### for your migration
 
 ???
-1. Some considerations for an easier integration
+1. Some topics for an easier integration
 1. What part of the app will we migrate first?
 2. How to properly bootstrap the app?
 3. What's the communication workflow?
 4. How to integrate the build process?
 
-* Biggest consideration: Smooth transition
+* Biggest topic: Smooth transition
 * Move fast, don't break
 * Don't break things
 
@@ -118,7 +119,7 @@ class: middle, factory2
 
 class: middle, factory2
 
-## Consideration no 1
+## topic no 1
 # Integration strategies
 
 ???
@@ -186,7 +187,7 @@ class: middle, factory2
 
 class: middle, factory2
 
-## Consideration no 2
+## topic no 2
 # Bootstrapping
 
 ???
@@ -291,7 +292,7 @@ class: middle, factory2
 
 class: middle, factory2
 
-## Consideration no 3
+## topic no 3
 # Communication
 
 ???
@@ -303,7 +304,7 @@ class: middle, factory2
 
 ---
 
-class: middle, factory2
+class: middle, factory2, top_title
 
 ## Data Down, Actions Up
 
@@ -319,7 +320,7 @@ class: middle, factory2
 
 ---
 
-class: middle, factory2
+class: middle, factory2, top_title
 
 ## Actions Up with  events
 
@@ -354,7 +355,7 @@ theApp.on('updateFacets', reloadDataTable);
 
 ---
 
-class: middle, factory2
+class: middle, factory2, top_title
 
 ## Data down with a public API
 
@@ -385,7 +386,7 @@ theApp.resetFacets().then(showFlashMessage);
 
 class: middle, factory2
 
-## Consideration no 4
+## topic no 4
 # Build process
 
 ---
@@ -393,7 +394,7 @@ class: middle, factory2
 class: middle, center, factory2
 
 # Automation<br>is hard
-### Watch your content hooks
+### Watch your content hooks in ember-cli
 
 ???
 

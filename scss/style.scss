@@ -184,3 +184,10 @@ img {
   width: 250px;
   background: transparent;
 }
+
+.top_title > h2:first-child {
+  position: absolute;
+  top: 1rem;;
+  left: 0;
+  right: 0;
+}
