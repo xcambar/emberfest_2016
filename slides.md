@@ -9,7 +9,7 @@ class: middle, factory
 
 # Xavier Cambar
 ## @xcambar
-## PeopleDoc
+.logo[<img src="./peopledoc.png"/>]
 
 ???
 
@@ -432,8 +432,7 @@ class: middle, fernsehturm
 class: middle, blue, fernsehturm
 
 # Thank you!
-### Questions?
-## Xavier Cambar — @xcambar
-## PeopleDoc
+## Xavier Cambar - @xcambar
+.logo[![](./peopledoc.png)]
 
 <!-- github twitter -->
