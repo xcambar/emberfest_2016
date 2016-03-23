@@ -392,10 +392,8 @@ class: middle, factory2
 
 class: middle, center, factory2
 
-# ember-cli
-### "Of course... but"
-
-## <small>(I don't really know)</small>
+# Automation<br>is hard
+### Beware the content hooks
 
 ???
 
@@ -403,6 +401,8 @@ class: middle, center, factory2
 * Very dependent on host app
 * Content hooks are hard to work with in this context
 * Flesh out `index.html`?
+* How to have multiple index.html?
+* How to separate content hooks into multiple files?
 
 * We try to avoid to build the Ember app locally
 * Making a release for each PR is very heavy
