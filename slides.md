@@ -364,7 +364,7 @@ class: middle, factory2
 
 ## Data Down, Actions Up
 
-.center[<img src="DDAU.png"/>]
+.center.ddau[<img src="DDAU.png"/>]
 
 ---
 

@@ -133,6 +133,14 @@ li:before {
 
 img {
   background: white;
+  padding: 0.4em;
+  width: 100%;
+  border-radius: 7px;
+  box-sizing: border-box;
+}
+
+.ddau img {
+  width: 500px;
 }
 
 .remark-code, img {
