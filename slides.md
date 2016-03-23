@@ -393,7 +393,7 @@ class: middle, factory2
 class: middle, center, factory2
 
 # Automation<br>is hard
-### Beware the content hooks
+### Watch your content hooks
 
 ???
 
