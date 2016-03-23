@@ -8,9 +8,8 @@ class: middle, factory
 class: middle, factory
 
 # Xavier Cambar
+## @xcambar
 ## PeopleDoc
-
-<!-- PD logo, twitter, github -->
 
 ???
 
@@ -21,64 +20,23 @@ class: middle, factory
 * Processes- and workflow-heavy applications
 * **Definitively** ambitious!
 
----
-
-class: middle, park
-
-# Backstory
-
-???
-
 * Allow me a bit of a back story.
-* Where I was
-* Where the company was
-* What overall was the situation
+* Manager: "Ember all the things!"
 
----
-
-class: middle, park
-
-## Manager:
-# "Ember all the things!"
-
-
----
-
-class: middle, park
-
-## Step 1
-# Brand new app
-### new project, *ideal* context
-
-???
-
+* Step 1: new project, *ideal* context
 * as we know and love
 * follow the docs and rock
 
-* Project was built
-* pushed to production
-* successfullly released
-* and then...
-
----
-
-class: middle, park
-
-## Step 2
-# Major app in the company
-### aka "Down the rabbit hole"
-
-???
-
+* Step 2: Major app in the company
 * Server-side rendered application
-* Python developers hate frontend code
+* Python developers **own and hate** frontend code
 * For good reasons: frontend tooling in Django was awful (another story)
 
 * Too many changes to be made
 * Should we adapt?
 * Should we rewrite?
 
-* When it comes to the main/biggest app in the company
+* The truth is...
 
 ---
 
@@ -88,49 +46,33 @@ class: middle, park
 # you just can't
 # start over
 
----
-
-class: middle, park
-
-#### Market is very demanding
-##### - & -
-#### Features are constantly landed
-
----
-
-class: middle, park
-
-.center[<img width="100%" src="Zeno_tortoise.png"/>]
-## Zeno's Achilles paradox is real
-
 ???
 
-* The product will move on
+* Market is very demanding
+* Features are constantly landed
+
+* The product must move on
+* The show must go on
+* Fast paced development
 * No time to catch up
 * Market is very sensitive to change
 * No Big Bang rewrites
+
 * Feature-full ETA: Too big to tell
 * We wanted an early release
 
----
+### Some epiphanies from the trenches
 
-class: middle, dinos
-
-# Epiphanies
-### From the trenches
-
-???
-
-* Radical change from the typical (documented) Ember context
 * There's a steep learning curve, but documentation supposes a friendly environment
 * Difference between theory and practice
+* Radical change from the typical (documented) Ember context
 
 ---
 
 class: middle, dinos
 
 ## Epiphany no 1
-# Components are the best, and your app is one
+# Your app is just a component
 
 ???
 
@@ -143,7 +85,7 @@ class: middle, dinos
 class: middle, dinos
 
 ## Epiphany no 2
-# Your Ember app lives in a hostile world
+# The outside world is hostile
 
 ???
 
@@ -159,9 +101,10 @@ class: middle, dinos
 
 class: middle, factory2
 
-# Considerations for an easier life
+# Towards <br>an easier life
 
 ???
+1. Some considerations for an easier integration
 1. What part of the app will we migrate first?
 2. How to properly bootstrap the app?
 3. What's the communication workflow?
@@ -176,27 +119,27 @@ class: middle, factory2
 class: middle, factory2
 
 ## Consideration no 1
-# What part of the app will we migrate first?
-
----
-
-class: middle, factory2
-
-#### The most **repeated** component?
-##### - or -
-#### The most **significant** component?
+# Integration strategies
 
 ???
 
+* The most **repeated** component
 * Good to DRY up the code
 * Good for design-heavy, UX-heavy apps
 
-* Good for critical parts of the application
-* Good for most used parts of the application
+* The most **critical** component
+* More sensitive data operations
+
+* The most **used** component
+* more control on the user experince
+* you're sure it works
+
+* The most **complex** component
+* Builds a safety net
 
 * We opted for the second strategy, because we're doing business software
 
-* So what's the plan?
+### So what's the plan?
 
 ---
 
@@ -244,7 +187,7 @@ class: middle, factory2
 class: middle, factory2
 
 ## Consideration no 2
-# How to bootstrap the app?
+# Bootstrapping
 
 ???
 
@@ -303,7 +246,7 @@ let app = MyApp.create({ autoboot: false });
 
 class: middle, factory2
 
-## Multiple roots with
+## A few words on
 # Ember Islands
 
 
@@ -349,7 +292,7 @@ class: middle, factory2
 class: middle, factory2
 
 ## Consideration no 3
-# Communication workflow
+# Communication
 
 ???
 
@@ -366,25 +309,11 @@ class: middle, factory2
 
 .center.ddau[<img src="DDAU.png"/>]
 
----
-
-class: middle, factory2
-
-## Services for state
-
-```js
-// app/services/facets.js
-export default Ember.Service.extend({
-  all() {
-    return this._allFromConfig() || this._allFromAPI();
-  },
-  /* ... */
-});
-```
-
 ???
 
+### Services as state
 * A single point of entry for data manipulation
+* Easily replace with an API call when ready
 * A minimum contact surface between your Ember app and the outside world
 * Get rid of it as soon as possible
 
@@ -392,12 +321,7 @@ export default Ember.Service.extend({
 
 class: middle, factory2
 
-# Actions Up
-### Emit events
-
----
-
-class: middle, factory2
+## Actions Up with  events
 
 ```js
 // app/app.js
@@ -432,12 +356,7 @@ theApp.on('updateFacets', reloadDataTable);
 
 class: middle, factory2
 
-# Data down
-### Expose a simple API
-
----
-
-class: middle, factory2
+## Data down with a public API
 
 ```js
 // app/app.js
@@ -471,20 +390,19 @@ class: middle, factory2
 
 ---
 
-class: middle, factory2
+class: middle, center, factory2
 
-# .red[Warning]
-### No generic solutions ahead
+# ember-cli
+### "Of course... but"
 
----
-
-class: middle, left, factory2
-
-#### `index.html` and content hooks are hard
-#### Separate builds as much as possible
-#### Very dependent on the host app
+## <small>(I don't really know)</small>
 
 ???
+
+* Separate builds as much as possible
+* Very dependent on host app
+* Content hooks are hard to work with in this context
+* Flesh out `index.html`?
 
 * We try to avoid to build the Ember app locally
 * Making a release for each PR is very heavy
@@ -498,23 +416,16 @@ class: middle, left, factory2
 class: middle, fernsehturm
 
 ## Conclusion
-# Embedding<br>Ember is easy
+# Migrate to Ember!
 
-### Start migrating your apps now!
-
----
-
-class: middle, left, fernsehturm
-
-#### Great opportunity to try Ember
-#### Non-obvious strategies
-#### How to make it more visible and accessible?
-
+### You have all the tools!
 
 ???
 
-* Tooling and APIs are moving in the right direction
-* Lack of documentation is on the community (aka, me)
+* Great opportunity to try Ember
+* The tools exist for an easy migration towards Ember
+* Non-obvious strategies
+* How to make it more visible and accessible?
 
 ---
 
