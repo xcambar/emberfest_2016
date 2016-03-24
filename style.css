@@ -158,9 +158,6 @@ img {
   border-radius: 7px;
   box-sizing: border-box; }
 
-.ddau img {
-  width: 500px; }
-
 .remark-code, img {
   box-shadow: 0px 0px 2px 0px #CCC, 2px 2px 2px 0px #666, 3px 3px 2px 0px rgba(0, 0, 0, 0.3);
   border-radius: 4px; }

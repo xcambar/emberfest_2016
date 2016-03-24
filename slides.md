@@ -145,7 +145,6 @@ class: middle, factory2
 ---
 
 class: middle, factory2
-
 .center[<img src="Step 0.png"/>]
 
 ???
@@ -304,11 +303,9 @@ class: middle, factory2
 
 ---
 
-class: middle, factory2, top_title
+class: middle, factory2
 
-## Data Down, Actions Up
-
-.center.ddau[<img src="DDAU.png"/>]
+.center[<img src="DDAU.png"/>]
 
 ???
 
