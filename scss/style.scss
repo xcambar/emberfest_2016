@@ -104,39 +104,29 @@ body {
   position: relative;
 }
 
-ul, ol {
-  font-size: 38px;
-  font-weight: normal;
-  margin: 30px 0;
-}
-
-li {
-  list-style-type: none;
-  padding: 15px 0;
-  position: relative;
-  text-align: left;
-}
-
-li:before {
-  content: '→';
-  position: absolute;
-  left: -40px;
-}
-
-.green {
-  color: lightgreen;
-}
-
-.red {
-  color: #CA2A2A;
-}
-
 img {
   background: white;
   padding: 0.4em;
   width: 100%;
   border-radius: 7px;
   box-sizing: border-box;
+}
+
+.remark-notes {
+  strong {
+    background-color: lightblue;
+  }
+
+  li > p {
+    margin: 0;
+  }
+}
+
+.remark-notes-preview-area {
+  display: none;
+}
+.remark-notes-area .remark-bottom-area .remark-notes-current-area {
+  height: 100%;
 }
 
 .remark-code, img {

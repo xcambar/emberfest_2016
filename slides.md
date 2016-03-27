@@ -13,30 +13,23 @@ class: middle, factory
 
 ???
 
-* 18 months in the company
-* HR processes
-* Business Software
-* Model-heavy applications
-* Processes- and workflow-heavy applications
+* PeopleDoc is an HR Company
+* We do Business Software
+* Our apps are **model- and processes-heavy**
 * **Definitively** ambitious!
 
-* Allow me a bit of a back story.
+* We're hiring!
+* Remotely!
+
 * Manager: "Ember all the things!"
-
 * Step 1: new project, *ideal* context
-* as we know and love
-* follow the docs and rock
-
+    * We built the app **by the book**
 * Step 2: Major app in the company
-* Server-side rendered application
-* Python developers **own and hate** frontend code
-* For good reasons: frontend tooling in Django was awful (another story)
+    * **Server-side rendered** application
+    * Python developers **own and hate** frontend code
 
-* Too many changes to be made
-* Should we adapt?
-* Should we rewrite?
-
-* The truth is...
+* When you are asked to handle such an app, that is **alive and well**
+* **you just can't start over**
 
 ---
 
@@ -52,33 +45,18 @@ class: middle, park
 * Features are constantly landed
 
 * The product must move on
-* The show must go on
-* Fast paced development
-* No time to catch up
-* Market is very sensitive to change
-* No Big Bang rewrites
+* **The show must go on**
+* The team already has a fast paced development
+* Considering to rewrite everything frm scratch and build a 1:1 Ember version of the existing is **madness**
 
-* Feature-full ETA: Too big to tell
-* We wanted an early release
+* Plus, we wanted an **early release** of the expected features
 
-### Some epiphanies from the trenches
+### Epiphanies
 
-* There's a steep learning curve, but documentation supposes a friendly environment
-* Difference between theory and practice
-* Radical change from the typical (documented) Ember context
+* **Ember is hard to learn**, it's no big news the learning curve is steep
+* Probably for this reason, **the documentation supposes a friendly environment**
 
----
-
-class: middle, dinos
-
-## Epiphany no 1
-# Your app is just a component
-
-???
-
-* Limit your `application.hbs` to a single component instanciation
-* You'll thank me later when the app will grow
-* Implement DDAU between your host app and your Ember app
+Here are **a couple of golden rules** to remember for your migration
 
 ---
 
@@ -89,13 +67,34 @@ class: middle, dinos
 
 ???
 
-* We needed a way to get an Ember app to deal with the outside world
-* Produce data for and consume data from the host app
-* Hostile JS that doesn't care about the runloop (What the hell!)
-* Hostile DOM
+* Hostile JS
+* **No RunLoop**!
+* Hostile DOM **that mutates unknowingly**
 * Hostile build process
+* You need a way to get an Ember app to deal with the outside world
+* **Produce data for** and **consume data from** the host app
 
 * Don't expose more than necessary!
+
+---
+
+class: middle, dinos
+
+## Epiphany no 1
+# Your app is just a component
+
+???
+
+You will start with **a slice of your app**, so:
+* Limit your `application.hbs` to a single component instanciation
+* You'll thank me later when the app will grow
+
+With this consideration in mind:
+* **Implement DDAU** between your host app and your Ember app
+* This will be covered later in the talk
+* DDAU enables **a safe environment**
+
+**Limit your application.hbs to a single line as much as possible**
 
 ---
 
@@ -105,15 +104,12 @@ class: middle, factory2
 ### for your migration
 
 ???
-1. Some topics for an easier integration
+Some considerations about **questions you will face**
+
 1. What part of the app will we migrate first?
 2. How to properly bootstrap the app?
 3. What's the communication workflow?
 4. How to integrate the build process?
-
-* Biggest topic: Smooth transition
-* Move fast, don't break
-* Don't break things
 
 ---
 
@@ -124,23 +120,28 @@ class: middle, factory2
 
 ???
 
-* The most **repeated** component
+### The most **repeated** component
 * Good to DRY up the code
 * Good for design-heavy, UX-heavy apps
+* Examples:
+    * Currency conversion
+    * Addresses
 
-* The most **critical** component
-* More sensitive data operations
+### The most **critical** component
+* More **control on sensitive operations**
+* Example:
+    * Tax form submission component
 
-* The most **used** component
-* more control on the user experince
-* you're sure it works
+### The component **the users use the most**
+  * Compose a tweet
 
-* The most **complex** component
-* Builds a safety net
+### The most **complex** component
+* Builds a safety net around complex features
+* Example:
+    * No example, because you will come up with a more complex one and mine will look foolish
 
-* We opted for the second strategy, because we're doing business software
-
-### So what's the plan?
+## So what's the plan?
+* We opted for the third strategy, because we're doing business software
 
 ---
 
@@ -149,14 +150,20 @@ class: middle, factory2
 
 ???
 
-At this point, your Ember App is nothing more than a component
-in the host application.
+### Feature run down
 
-It should be treated that way.
+* Facets
+    * Dynamic lists
+    * **Dependent fields**
+    * Values are updated (or even available) based on already selected values
+    * **Counters** are live
+* Search
+    * **Autocomplete** field
+    * **Dependent on the facets**
+* Table
+    * Filtering, Sorting, Add/Remove columns, crazy rendering, **classic**...
 
-`application.hbs` should be a single line of code, calling your "main" component.
-
-unless you're using Ember Islands, see later.
+We started with the **facets**.
 
 ---
 
@@ -182,6 +189,21 @@ class: middle, factory2
 
 .center[<img src="Step 4.png"/>]
 
+???
+
+Thanks to the `visit` API, you can **work with the router early**.
+
+After you're done with the components
+* of a single page
+* on many pages
+
+You can **take over the History**.
+
+Note: "take over history" has quite a nice ring to it :)
+
+In our strategy, this is when we will **consider close to Done** for the app.
+Not there yet...
+
 ---
 
 class: middle, factory2
@@ -191,15 +213,19 @@ class: middle, factory2
 
 ???
 
+Because of **the hostile environment** and because of Ember bootstrapping defaults,
+you want to make sure that you bootstrap:
+
 * At the **right time**
 * At the **right place**
 * With the **right data**
 
+**Ember provides the tools for that**
+
 * You most likely don't have an API at hand.
 * Start your Ember APP with what you have
 * Don't require more than you have
-* Let the host application control the application flow
-* data === state === context
+* **data === state === context**
 
 ---
 
@@ -207,19 +233,21 @@ class: middle, factory2
 
 .center[<img src="Init - pre.png"/>]
 
----
-
-class: center, middle, factory2
-
-.center[<img src="Step 1.png"/>]
-
 ???
 
 * Remove the code in the template that generates the UL/LI, SELECT...
 * Turn that into a data structure
 * Pass it to your Ember app in the configuration
 
-* No New API required!
+* Static HTML becomes configuration
+* As the app evolves, it **may become an API**
+* Don't build a new API at first, **it takes too much time**
+
+---
+
+class: center, middle, factory2
+
+.center[<img src="Step 1.png"/>]
 
 ---
 
@@ -239,9 +267,6 @@ let app = MyApp.create({ autoboot: false });
   });
 ```
 
-## .red[**Warning:**] Ember ≥ 2.3
-
-
 ---
 
 class: middle, factory2
@@ -249,6 +274,14 @@ class: middle, factory2
 ## A few words on
 # Ember Islands
 
+???
+
+**Fantastic** ember-cli addon by **Mitch Lloyd**
+
+* it allows to render an app into multiple **DOM islands**
+* it's like **multiple root elements**
+
+* There's a Global Meetup talk about it
 
 ---
 
@@ -261,6 +294,12 @@ class: middle, factory2
 class: middle, factory2
 
 .center[<img src="Step 2.png"/>]
+
+???
+
+In our case, adding the Search without taking over the Data Table was not possible.
+
+Ember Islands came to the rescue!
 
 ---
 
@@ -282,10 +321,8 @@ class: middle, factory2
 
 ???
 
-* RTFM
-* It's very quickly a requirement
-* See Ember Meetup Global
-* I prefer to leave the configuration to API and initial configuration
+* You declare the **name of the component** where you want it.
+* You can also pass configuration, but I'd **avoid doing passing configuration**, I prefermy **config in the bootstrap JS code**.
 
 ---
 
@@ -299,7 +336,9 @@ class: middle, factory2
 * Your app is a component in your host APP
 * you don't want ot expose the guts of your app
 * Internals are for your eyes only
-* Data down, actions up
+* You can extend/simulate *Data down, actions up* with:
+    * events as actions
+    * methods as a means to update the data
 
 ---
 
@@ -310,10 +349,10 @@ class: middle, factory2
 ???
 
 ### Services as state
-* A single point of entry for data manipulation
-* Easily replace with an API call when ready
-* A minimum contact surface between your Ember app and the outside world
-* Get rid of it as soon as possible
+* Services allow to have **A single point of entry for data manipulation**
+* You can **ibject them** wherever you want
+* Easily **replace configuration with an API** call when they're ready
+* They're **the minimum surface of contact** you could have between your Ember app and the outside world
 
 ---
 
@@ -347,8 +386,9 @@ theApp.on('updateFacets', reloadDataTable);
 ???
 
 * What I think is the best way to teach the outside world
-* that your app did something
-* Fire and forget, it's not your responsibility
+
+* A **Fire and Forget** strategy is great
+* what to do after **is not the responsibility** of your Ember app.
 
 ---
 
@@ -377,7 +417,7 @@ theApp.resetFacets().then(showFlashMessage);
 
 * Minimal surface API
 * Equivalent of `sendAction` and `{{action}}` for non-Ember things
-* Keeps control flow at hand
+* Control flow is maintained if you use Promises as return values
 
 ---
 
@@ -385,6 +425,11 @@ class: middle, factory2
 
 ## topic no 4
 # Build process
+
+???
+
+* It's a hard topic
+* Very dependent on host app
 
 ---
 
@@ -395,19 +440,27 @@ class: middle, center, factory2
 
 ???
 
-* Separate builds as much as possible
-* Very dependent on host app
+### ember-cli is oriented towards full-page Ember apps.
+
 * Content hooks are hard to work with in this context
 * Flesh out `index.html`?
 * How to have multiple index.html?
 * How to separate content hooks into multiple files?
 
+### What we want:
+
 * We try to avoid to build the Ember app locally
+* We want to deliver the app to the host as a dependency
 * Making a release for each PR is very heavy
 * SemVer saves the day, but it remains tedious
+
 * Copy/Paste is the current way to go.
 
-* No silver lining
+### At the end of the day
+
+* I should invest more in ember-cli
+* I much prefer to work with ember-cli even if it's hard
+* **ember-cli is awesome nonetheless**
 
 ---
 
@@ -420,10 +473,12 @@ class: middle, fernsehturm
 
 ???
 
-* Great opportunity to try Ember
-* The tools exist for an easy migration towards Ember
-* Non-obvious strategies
-* How to make it more visible and accessible?
+
+### you can migrate your already ambitious app to Ember
+* **The tools for an easy migration are already there**
+* Great opportunity to see Ember in more companies and projects
+
+A lot of talks about migrations this year. **Let's write awesome documentation!**
 
 ---
 
