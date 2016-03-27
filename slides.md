@@ -229,17 +229,28 @@ you want to make sure that you bootstrap:
 
 ---
 
+class: center, middle, factory2
+
+.center[<img src="Step 0.png"/>]
+
+???
+
+This is the app in its current form.
+
+* Remove the code in the template that generates the UL/LI, SELECT...
+* Turn that into a data structure
+* **Static HTML becomes configuration**
+
+---
+
 class: middle, factory2
 
 .center[<img src="Init - pre.png"/>]
 
 ???
 
-* Remove the code in the template that generates the UL/LI, SELECT...
-* Turn that into a data structure
 * Pass it to your Ember app in the configuration
 
-* Static HTML becomes configuration
 * As the app evolves, it **may become an API**
 * Don't build a new API at first, **it takes too much time**
 
