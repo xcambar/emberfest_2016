@@ -3,6 +3,17 @@ class: middle, factory
 # Migrating an app to Ember
 ## Component after Component
 
+???
+
+What I mean by that is "how not to do a big bang rewrite of an existing application",
+and "how not to lose your sanity catching up with the existing features".
+
+Because building features is cool, but rewriting features not so much.
+
+And you (or your company) can not alwayd afford a rewrite.
+
+A bit about me and how we got there.
+
 ---
 
 class: middle, factory
@@ -21,26 +32,31 @@ class: middle, factory
 * We're hiring!
 * Remotely!
 
-* Manager: "Ember all the things!"
-* Step 1: new project, *ideal* context
+* Manager: "Can you save our frontend?"
+* **(Because of the context)** Me: "Yeah, sure, Ember all the things!"
+* Step 1: new project, *ideal* context (**apetizers**)
     * We built the app **by the book**
+    * it worked perfectly
 * Step 2: Major app in the company
-    * **Server-side rendered** application
+    * 7 years old
+    * mostly **Server-side rendered** application
+    * tons of features
     * Python developers **own and hate** frontend code
 
-* When you are asked to handle such an app, that is **alive and well**
+* After a **very quick** discussion with the product team, it was very clear that
 * **you just can't start over**
 
 ---
 
 class: middle, park
 
-## In the real world
-# You just can't
+## Unfortunately
+# You can't always
 # start over
 
 ???
 
+In our case,
 * Market is very demanding
 * Features are constantly landed
 
@@ -51,50 +67,62 @@ class: middle, park
 
 * Plus, we wanted an **early release** of the expected features
 
+* So we needed another way to get Ember into this app, as there was no way it would be replaced.
+* The thing is, it's not always obvious how you should proceed.
+
+The following of this talk will provide some hopefully helpful tips
+if you ever want or need to migrate an existing app to Ember.
+
 ### Epiphanies
 
-* **Ember is hard to learn**, it's no big news the learning curve is steep
-* Probably for this reason, **the documentation supposes a friendly environment**
+Here are **a couple of golden rules** to remember for your migration.
 
-Here are **a couple of golden rules** to remember for your migration
-
----
-
-class: middle, dinos
-
-## Epiphany no 2
-# The outside world is hostile
-
-???
-
-* Hostile JS
-* **No RunLoop**!
-* Hostile DOM **that mutates unknowingly**
-* Hostile build process
-* You need a way to get an Ember app to deal with the outside world
-* **Produce data for** and **consume data from** the host app
-
-* Don't expose more than necessary!
+* If we had those thought clear before we started, it would have guided us.
+* Keep those epiphanies in mind when you need Ember to interact with the outside world
+* (Works for addons as well)
 
 ---
 
 class: middle, dinos
 
 ## Epiphany no 1
+# The outside world is hostile
+
+???
+
+* Hostile JS
+* **No RunLoop**! (we're civilized, aren't we?)
+* Hostile DOM **that mutates unknowingly**
+* Hostile build process
+* You need a way to get an Ember app to deal with the outside world
+
+* It's all about producing data and consuming data, right?
+* **Produce data for** and **consume data from** the host app
+
+* Don't expose more of your app than necessary!
+
+---
+
+class: middle, dinos
+
+## Epiphany no 2
 # Your app is just a component
 
 ???
 
-You will start with **a slice of your app**, so:
-* Limit your `application.hbs` to a single component instanciation
-* You'll thank me later when the app will grow
+You go component after component, so it's only natural that at first,
+your app is just a component.
+
+How do we handle data flow in an Ember app? **DDAU**
 
 With this consideration in mind:
 * **Implement DDAU** between your host app and your Ember app
 * This will be covered later in the talk
 * DDAU enables **a safe environment**
 
-**Limit your application.hbs to a single line as much as possible**
+* You will start with **a slice of your app**, so:
+
+**Limit your application.hbs to a single line as much as possible, and as long as you can**
 
 ---
 
@@ -104,7 +132,8 @@ class: middle, factory2
 ### for your migration
 
 ???
-Some considerations about **questions you will face**
+
+There are some questions that you will have to face while when performing a slow migration.
 
 1. What part of the app will we migrate first?
 2. How to properly bootstrap the app?
@@ -119,6 +148,8 @@ class: middle, factory2
 # Integration strategies
 
 ???
+
+**What component should I start with?**
 
 ### The most **repeated** component
 * Good to DRY up the code
@@ -140,8 +171,7 @@ class: middle, factory2
 * Example:
     * No example, because you will come up with a more complex one and mine will look foolish
 
-## So what's the plan?
-* We opted for the third strategy, because we're doing business software
+**We opted for the third strategy, because we're doing business software**
 
 ---
 
@@ -165,6 +195,10 @@ class: middle, factory2
 
 We started with the **facets**.
 
+## A note on working on multiple pages
+
+Thanks to the `visit` API, you can **work with the router early**.
+
 ---
 
 class: middle, factory2
@@ -183,6 +217,10 @@ class: middle, factory2
 
 .center[<img src="Step 3.png"/>]
 
+???
+
+Data tables are hard, we kept then last
+
 ---
 
 class: middle, factory2
@@ -190,8 +228,6 @@ class: middle, factory2
 .center[<img src="Step 4.png"/>]
 
 ???
-
-Thanks to the `visit` API, you can **work with the router early**.
 
 After you're done with the components
 * of a single page
@@ -220,12 +256,11 @@ you want to make sure that you bootstrap:
 * At the **right place**
 * With the **right data**
 
-**Ember provides the tools for that**
+Fortunately, **Ember provides the tools to bootstrap your app as specifically as needed**
 
-* You most likely don't have an API at hand.
-* Start your Ember APP with what you have
-* Don't require more than you have
-* **data === state === context**
+* You can pass options and make it your state
+* you can start programmatically
+* you can route to a specific page
 
 ---
 
@@ -235,11 +270,13 @@ class: center, middle, factory2
 
 ???
 
-This is the app in its current form.
+This is the app in its initial form.
+Worst case scenario: you don't have an API, you only have static HTML.
+Let's consider that.
 
 * Remove the code in the template that generates the UL/LI, SELECT...
 * Turn that into a data structure
-* **Static HTML becomes configuration**
+* **Static HTML becomes configuration** (selected facets...)
 
 ---
 
@@ -249,10 +286,17 @@ class: middle, factory2
 
 ???
 
-* Pass it to your Ember app in the configuration
+* Pass the configuration to your Ember app so it bootstraps with the correct state and voilà!
 
-* As the app evolves, it **may become an API**
-* Don't build a new API at first, **it takes too much time**
+About static configuration VS APIs:
+
+* bootstrap configuration is a temporary solution, because you don't have an API not the router ready yet.
+* As the app evolves, it **may become an API** (and hopefully will).
+
+Don't think too much about APIs or Router at first, it's a lot of work to handle and you already have your previous app doing that for you.
+DRY! Reuse the existing, turn it upside down, make it yours!
+
+Just build and use data.
 
 ---
 
@@ -260,9 +304,15 @@ class: center, middle, factory2
 
 .center[<img src="Step 1.png"/>]
 
+???
+
+...And your app is started.
+
+The green part is your Ember app. But how did it work, specifically?
+
 ---
 
-class: middle, factory2
+class: middle, factory2, bigger1
 
 ```js
 let app = MyApp.create({ autoboot: false });
@@ -277,6 +327,14 @@ let app = MyApp.create({ autoboot: false });
     console.log('Smooth');
   });
 ```
+
+???
+
+location deactivates the Router
+
+rootElement
+
+APP is an object which data you can consume in services, components...
 
 ---
 
@@ -314,15 +372,15 @@ Ember Islands came to the rescue!
 
 ---
 
-class: middle, factory2
+class: middle, factory2, bigger2
 
-```html
+```js
 // app/templates/application.hbs
-
 {{ember-islands}}
+```
 
+```js
 // your_host_page.html
-
 <div data-component='my-first-component'></div>
 <!-- More HTML -->
 <div data-component='my-other-component'></div>
@@ -344,12 +402,18 @@ class: middle, factory2
 
 ???
 
+Your app starts in the correct state, but this state is more than likely going to change.
+
+If your Ember app changes its state, it may want to inform the host app.
+
+If the host app requires a change in your Ember app's state, it needs a way to do it.
+
+Keep in mind that:
+
 * Your app is a component in your host APP
-* you don't want ot expose the guts of your app
-* Internals are for your eyes only
-* You can extend/simulate *Data down, actions up* with:
-    * events as actions
-    * methods as a means to update the data
+* You want to expose a public API as small as possible
+
+Let's try to DDAU this layer in our app.
 
 ---
 
@@ -359,17 +423,31 @@ class: middle, factory2
 
 ???
 
+Actions up:
+* events as actions
+* A **Fire and Forget** strategy is great
+* What I think is the best way to teach the outside world
+* what to do after **is not the responsibility** of your Ember app.
+
+Data down:
+* methods as a means to update the data
+* Minimal surface API
+* Equivalent of `sendAction` and `{{action}}` for non-Ember things
+* Control flow is maintained if you use Promises as return values
+
+
+
 ### Services as state
 * Services allow to have **A single point of entry for data manipulation**
-* You can **ibject them** wherever you want
+* You can **inject them** wherever you want
 * Easily **replace configuration with an API** call when they're ready
 * They're **the minimum surface of contact** you could have between your Ember app and the outside world
 
 ---
 
-class: middle, factory2, top_title
+class: middle, factory2, top_title, bigger3
 
-## Actions Up with  events
+## Actions Up with events
 
 ```js
 // app/app.js
@@ -394,16 +472,9 @@ export default {
 theApp.on('updateFacets', reloadDataTable);
 ```
 
-???
-
-* What I think is the best way to teach the outside world
-
-* A **Fire and Forget** strategy is great
-* what to do after **is not the responsibility** of your Ember app.
-
 ---
 
-class: middle, factory2, top_title
+class: middle, factory2, top_title, bigger0
 
 ## Data down with a public API
 
@@ -414,7 +485,8 @@ Ember.Application.extend({
     @returns Promise
   */
   resetFacets() {
-    return this.__container__.lookup('service:facets').reset();
+    const container = this.__container__;
+    return container.lookup('service:facets').reset();
   }
 });
 ```
@@ -426,9 +498,7 @@ theApp.resetFacets().then(showFlashMessage);
 
 ???
 
-* Minimal surface API
-* Equivalent of `sendAction` and `{{action}}` for non-Ember things
-* Control flow is maintained if you use Promises as return values
+### Control flow preserved!
 
 ---
 
@@ -442,36 +512,39 @@ class: middle, factory2
 * It's a hard topic
 * Very dependent on host app
 
+* We don't have a definitive answer.
+
+General tip: Be careful.
+
 ---
 
 class: middle, center, factory2
 
 # Automation<br>is hard
-### Watch your content hooks in ember-cli
+### <small>*Watch your content hooks in ember-cli*</small>
 
 ???
 
-### ember-cli is oriented towards full-page Ember apps.
+### Ember-cli is amazing
+
+* it makes a sdifficult task easy
+* it's still open
+* it's interoperable
+* can be used with the CLI or programmatically via an API
+
+### ember-cli is oriented towards single-page apps.
 
 * Content hooks are hard to work with in this context
 * Flesh out `index.html`?
 * How to have multiple index.html?
 * How to separate content hooks into multiple files?
 
-### What we want:
+### tl;dr;
 
-* We try to avoid to build the Ember app locally
-* We want to deliver the app to the host as a dependency
-* Making a release for each PR is very heavy
-* SemVer saves the day, but it remains tedious
-
-* Copy/Paste is the current way to go.
-
-### At the end of the day
-
-* I should invest more in ember-cli
-* I much prefer to work with ember-cli even if it's hard
-* **ember-cli is awesome nonetheless**
+* Find your own way in your own context
+* If you have answers, come find me!
+* ember-cli makes our lives so much easier
+* I should invest more in ember-cli, hey Stef!
 
 ---
 
@@ -484,12 +557,14 @@ class: middle, fernsehturm
 
 ???
 
-
 ### you can migrate your already ambitious app to Ember
 * **The tools for an easy migration are already there**
 * Great opportunity to see Ember in more companies and projects
 
 A lot of talks about migrations this year. **Let's write awesome documentation!**
+
+I'm very glad about the "Learning core team". If you have experience about migrations,
+we should gather and write amazing documentation (Hey Ray, Hey Jade)!
 
 ---
 
