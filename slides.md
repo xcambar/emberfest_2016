@@ -640,7 +640,7 @@ class: middle, center, tool
 
 ---
 
-class: middle, fernsehturm
+class: middle, happy
 
 ## Conclusion
 # Migrate to Ember!
@@ -660,7 +660,7 @@ we should gather and write amazing documentation (Hey Ray, Hey Jade)!
 
 ---
 
-class: middle, blue, fernsehturm
+class: middle, blue, happy
 
 # Thank you!
 ## Xavier Cambar - @xcambar

@@ -111,6 +111,12 @@
       background-size: 130%;
     }
   }
+  &.happy {
+    @include chapter(hsl(45,60%,74%)) {
+      background: url(awkward-stock/happy.jpeg) -120px 0px;
+      background-size: 110%;
+    }
+  }
 }
 
 /* END Colours */
