@@ -1,4 +1,34 @@
-class: middle, factory
+class: middle, grandpa
+
+# Warning
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Suggestion for <a href="https://twitter.com/EmberFest">@EmberFest</a> talks: all speakers to include at least one terrible stock photo. <a href="https://twitter.com/hashtag/emberjs?src=hash">#emberjs</a> <a href="https://twitter.com/mixonic">@mixonic</a> <a href="https://twitter.com/eaf4">@eaf4</a> <a href="https://twitter.com/alexspeller">@alexspeller</a> <a href="https://t.co/xRdrQ7Igs9">pic.twitter.com/xRdrQ7Igs9</a></p>&mdash; Mike North (@michaellnorth) <a href="https://twitter.com/michaellnorth/status/790295089079848961">October 23, 2016</a></blockquote>
+
+---
+class: middle, bear
+
+&nbsp;<br/>
+&nbsp;<br/>
+&nbsp;<br/>
+&nbsp;<br/>
+&nbsp;<br/>
+&nbsp;<br/>
+&nbsp;<br/>
+&nbsp;<br/>
+&nbsp;<br/>
+&nbsp;<br/>
+&nbsp;<br/>
+&nbsp;<br/>
+&nbsp;<br/>
+&nbsp;<br/>
+&nbsp;<br/>
+&nbsp;<br/>
+&nbsp;<br/>
+&nbsp;<br/>
+# Let's do it
+
+---
+class: middle, kiss
 
 # Migrating an app to Ember
 ## Component after Component
@@ -13,7 +43,7 @@ Briefly, some info about me.
 
 ---
 
-class: middle, factory
+class: middle, kiss
 
 ## Xavier Cambar
 ## @xcambar
@@ -96,16 +126,20 @@ class: middle, factory
 class: middle, park
 
 # Non-invasive Ember
-## for a smooth transition
+## for a smooth transition<br/>and a happier life
 
 ???
+
+Non-invasive ~= integrable
+
+Somehow, for migration purposes, the docs should be read upside down.
 
 ## Comparison to other frameworks
 
 * Comparing to component-oriented libraries (react, Vue),
-  Ember looks too difficult to integrate smoothly
+  Ember looks too difficult to slowly integrate
 
-## Personal experience
+## An example of impossible rewrite
 
 In our case,
 * Market is very demanding
@@ -131,7 +165,7 @@ Here are **a couple of golden rules** to remember for your migration.
 
 ---
 
-class: middle, dinos
+class: middle, cream
 
 ## Epiphany no 1
 # Ember is well-behaved
@@ -152,7 +186,7 @@ class: middle, dinos
 
 ---
 
-class: middle, dinos
+class: middle, cream
 
 ## Epiphany no 2
 # Components are <br/>first-class citizens
@@ -176,7 +210,7 @@ With this consideration in mind:
 
 ---
 
-class: middle, factory2
+class: middle, doc
 
 # Key aspects
 ### of your migration
@@ -192,10 +226,10 @@ There are some questions that you will have to face while when performing a slow
 
 ---
 
-class: middle, factory2
+class: middle, doc
 
 ## #1
-# A migration strategy
+# Plan a strategy
 
 ???
 
@@ -220,7 +254,7 @@ Let's focus on ONE
 
 ---
 
-class: middle, factory2
+class: middle, doc
 .center[<img src="Step 0.png"/>]
 
 ???
@@ -246,19 +280,19 @@ Thanks to the `visit` API, you can **work with the router early**.
 
 ---
 
-class: middle, factory2
+class: middle, doc
 
 .center[<img src="Step 1.png"/>]
 
 ---
 
-class: middle, factory2
+class: middle, doc
 
 .center[<img src="Step 2.png"/>]
 
 ---
 
-class: middle, factory2
+class: middle, doc
 
 .center[<img src="Step 3.png"/>]
 
@@ -268,7 +302,7 @@ Data tables are hard, we kept them last
 
 ---
 
-class: middle, factory2
+class: middle, doc
 
 .center[<img src="Step 4.png"/>]
 
@@ -280,7 +314,7 @@ you can call it a route.
 
 ---
 
-class: middle, factory2
+class: middle, doc
 
 .center[<img src="Step 5.png"/>]
 
@@ -299,7 +333,7 @@ Not there yet...
 
 ---
 
-class: middle, factory2
+class: middle, doc
 
 ## #2
 # Bootstrapping
@@ -321,7 +355,7 @@ Fortunately, **Ember provides the tools to bootstrap your app as specifically as
 
 ---
 
-class: center, middle, factory2
+class: center, middle, doc
 
 .center[<img src="Step 0.png"/>]
 
@@ -337,7 +371,7 @@ Let's consider that.
 
 ---
 
-class: middle, factory2
+class: middle, doc
 
 .center[<img src="Init - pre.png"/>]
 
@@ -357,7 +391,7 @@ Just build and use data.
 
 ---
 
-class: center, middle, factory2
+class: center, middle, doc
 
 .center[<img src="Step 1.png"/>]
 
@@ -369,7 +403,7 @@ The green part is your Ember app. But how did it work, specifically?
 
 ---
 
-class: middle, factory2, bigger1
+class: middle, doc, bigger1
 
 ```js
 let app = MyApp.create({ autoboot: false });
@@ -395,10 +429,28 @@ APP is an object which data you can consume in services, components...
 
 ---
 
-class: middle, factory2
+class: middle, doc
 
-## A few words on
+.center[<img src="Step 1.png"/>]
+
+---
+
+class: middle, doc
+
+.center[<img src="Step 2.png"/>]
+
+???
+
+In our case, adding the Search without taking over the Data Table was not possible.
+
+Ember Islands came to the rescue!
+
+---
+
+class: middle, doc
+
 # Ember Islands
+## to the rescue
 
 ???
 
@@ -411,25 +463,7 @@ class: middle, factory2
 
 ---
 
-class: middle, factory2
-
-.center[<img src="Step 1.png"/>]
-
----
-
-class: middle, factory2
-
-.center[<img src="Step 2.png"/>]
-
-???
-
-In our case, adding the Search without taking over the Data Table was not possible.
-
-Ember Islands came to the rescue!
-
----
-
-class: middle, factory2, bigger2
+class: middle, doc, bigger2
 
 ```js
 // app/templates/application.hbs
@@ -452,10 +486,11 @@ class: middle, factory2, bigger2
 
 ---
 
-class: middle, factory2
+class: middle, tool
 
 ## #3
 # Communication
+## is key
 
 ???
 
@@ -474,7 +509,7 @@ Let's try to DDAU this layer in our app.
 
 ---
 
-class: middle, factory2
+class: middle, tool
 
 .center[<img src="DDAU.png"/>]
 
@@ -502,7 +537,7 @@ Data down:
 
 ---
 
-class: middle, factory2, top_title, bigger3
+class: middle, tool, top_title, bigger3
 
 ## Actions Up with events
 
@@ -531,7 +566,7 @@ theApp.on('updateFacets', reloadDataTable);
 
 ---
 
-class: middle, factory2, top_title, bigger0
+class: middle, tool, top_title, bigger0
 
 ## Data down with a public API
 
@@ -559,7 +594,7 @@ theApp.resetFacets().then(showFlashMessage);
 
 ---
 
-class: middle, factory2
+class: middle, tool
 
 ## #4
 # Build process
@@ -575,10 +610,10 @@ General tip: Be careful.
 
 ---
 
-class: middle, center, factory2
+class: middle, center, tool
 
-# Automation<br>is hard
-### <small>*Watch your content hooks in ember-cli*</small>
+# Use what you have
+### <small>with Ember-cli programmatically</small>
 
 ???
 
