@@ -136,6 +136,9 @@ img {
 .remark-notes li > p {
   margin: 0; }
 
+.remark-preview-area {
+  transform: perspective(10px) translateZ(-4px); }
+
 .remark-notes-preview-area {
   display: none; }
 
@@ -195,5 +198,8 @@ img {
 .bigger2 .remark-code {
   font-size: 43px;
   padding: 0.8em .5em; }
+
+.next_hidden + * {
+  visibility: hidden; }
 
 /*# sourceMappingURL=style.css.map */

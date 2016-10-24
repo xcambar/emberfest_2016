@@ -5,20 +5,17 @@ class: middle, factory
 
 ???
 
-What I mean by that is "how not to do a big bang rewrite of an existing application",
-and "how not to lose your sanity catching up with the existing features".
+When you need to convince your coworkers, managers and CTO
+who are reluctant to throwing away years of hard work, even
+for the brilliance and confort that Ember provides.
 
-Because building features is cool, but rewriting features not so much.
-
-And you (or your company) can not alwayd afford a rewrite.
-
-A bit about me and how we got there.
+Briefly, some info about me.
 
 ---
 
 class: middle, factory
 
-# Xavier Cambar
+## Xavier Cambar
 ## @xcambar
 .logo[<img src="./peopledoc.png"/>]
 
@@ -32,29 +29,83 @@ class: middle, factory
 * We're hiring!
 * Remotely!
 
-* Manager: "Can you save our frontend?"
-* **(Because of the context)** Me: "Yeah, sure, Ember all the things!"
-* Step 1: new project, *ideal* context (**apetizers**)
-    * We built the app **by the book**
-    * it worked perfectly
-* Step 2: Major app in the company
-    * 7 years old
-    * mostly **Server-side rendered** application
-    * tons of features
-    * Python developers **own and hate** frontend code
-
-* After a **very quick** discussion with the product team, it was very clear that
-* **you just can't start over**
-
 ---
 
-class: middle, park
+class: middle, factory
 
-## Unfortunately
-# You can't always
-# start over
+# Why not rewrite?
+## "The greater good" <br/><small>Versus</small></br> "The cold hard truth"
 
 ???
+
+* Change everything
+* Start over from scratch
+
+---
+class: middle, factory
+
+## The greater good
+<div class="next_hidden"></div>
+### Ember is *fantastic*
+
+???
+
+* Ember has many benefits
+  * Convention over configuration
+  * High productivity
+  * A fantasticly helpful community
+
+---
+class: middle, factory
+
+## The greater good
+### Ember is *fantastic*
+
+???
+
+The benefits come at a cost
+
+---
+class: middle, factory
+
+## The cold hard truth
+<div class="next_hidden"></div>
+### Ember is *scary*
+
+???
+
+* Ember is _hard_
+
+* Ember has a very steep learning curve
+* Rewrite to Ember = (Training + architecture + implementation + testing) * error rate
+
+* Your company has spent years (and $$$) on the current application
+* It's not as common a skill as React, Angular...
+
+* A migration is mostly a rewrite of existing features, so it better be fast.
+
+---
+class: middle, factory
+
+## The cold hard truth
+### Ember is *scary*
+
+???
+
+---
+class: middle, park
+
+# Non-invasive Ember
+## for a smooth transition
+
+???
+
+## Comparison to other frameworks
+
+* Comparing to component-oriented libraries (react, Vue),
+  Ember looks too difficult to integrate smoothly
+
+## Personal experience
 
 In our case,
 * Market is very demanding
@@ -70,9 +121,6 @@ In our case,
 * So we needed another way to get Ember into this app, as there was no way it would be replaced.
 * The thing is, it's not always obvious how you should proceed.
 
-The following of this talk will provide some hopefully helpful tips
-if you ever want or need to migrate an existing app to Ember.
-
 ### Epiphanies
 
 Here are **a couple of golden rules** to remember for your migration.
@@ -86,7 +134,8 @@ Here are **a couple of golden rules** to remember for your migration.
 class: middle, dinos
 
 ## Epiphany no 1
-# The outside world is hostile
+# Ember is well-behaved
+### Corollary: The outside world is hostile
 
 ???
 
@@ -106,7 +155,8 @@ class: middle, dinos
 class: middle, dinos
 
 ## Epiphany no 2
-# Your app is just a component
+# Components are <br/>first-class citizens
+### Corollary: Your app is just a component
 
 ???
 
@@ -128,8 +178,8 @@ With this consideration in mind:
 
 class: middle, factory2
 
-# Key topics
-### for your migration
+# Key aspects
+### of your migration
 
 ???
 
@@ -144,19 +194,14 @@ There are some questions that you will have to face while when performing a slow
 
 class: middle, factory2
 
-## topic no 1
-# Integration strategies
+## #1
+# A migration strategy
 
 ???
 
 **What component should I start with?**
 
-### The most **repeated** component
-* Good to DRY up the code
-* Good for design-heavy, UX-heavy apps
-* Examples:
-    * Currency conversion
-    * Addresses
+Let's focus on ONE
 
 ### The most **critical** component
 * More **control on sensitive operations**
@@ -219,13 +264,25 @@ class: middle, factory2
 
 ???
 
-Data tables are hard, we kept then last
+Data tables are hard, we kept them last
 
 ---
 
 class: middle, factory2
 
 .center[<img src="Step 4.png"/>]
+
+???
+
+When you're done with all the components on a page,
+you can call it a route.
+
+
+---
+
+class: middle, factory2
+
+.center[<img src="Step 5.png"/>]
 
 ???
 
@@ -244,7 +301,7 @@ Not there yet...
 
 class: middle, factory2
 
-## topic no 2
+## #2
 # Bootstrapping
 
 ???
@@ -397,7 +454,7 @@ class: middle, factory2, bigger2
 
 class: middle, factory2
 
-## topic no 3
+## #3
 # Communication
 
 ???
@@ -504,7 +561,7 @@ theApp.resetFacets().then(showFlashMessage);
 
 class: middle, factory2
 
-## topic no 4
+## #4
 # Build process
 
 ???

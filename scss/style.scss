@@ -117,6 +117,9 @@ img {
   }
 }
 
+.remark-preview-area {
+  transform: perspective(10px) translateZ(-4px);
+}
 .remark-notes-preview-area {
   display: none;
 }
@@ -196,4 +199,8 @@ img {
     font-size: 43px;
     padding: 0.8em .5em;
   }
+}
+
+.next_hidden + * {
+  visibility: hidden;
 }
