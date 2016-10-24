@@ -1,42 +1,115 @@
 @import "mixins";
 
+.remark-slide-container {
+  display: block;
+  visibility: hidden;
+  .remark-slide-content {
+    background-color: transparent;
+    > * {
+      opacity: 0;
+    }
+  }
+
+  &.remark-visible {
+    visibility: visible;
+    .remark-slide-content {
+      > * {
+        transition: none;
+        opacity: 1;
+      }
+      transition: none;
+    }
+  }
+}
+
+.remark-slide-container.remark-visible .remark-slide-content.do_transition {
+  transition: background-color 300ms ease-in 300ms;
+  > * {
+    transition: opacity 300ms ease-out 700ms;
+  }
+}
+
 /* Colors */
-.factory {
-  $color: hsl(45,60%,74%);
-  @include chapter($color) {
-    background: url(factory.jpg) -180px -130px;
-    background-size: 120%;
+.remark-slide-container.remark-visible .remark-slide-content {
+  &.grandpa {
+    $color: white;
+    @include chapter($color) {
+      background: url(awkward-stock/boxing-granpa.jpg) 100% 20% no-repeat;
+      background-size: 70%;
+    }
   }
-}
-
-.dinos {
-  $color: hsl(9,67%,64%);
-  @include chapter($color) {
-    background: url(dinos.jpg) -120px 0px;
-    background-size: 130%;
+  &.kiss {
+    $color: hsl(45,60%,74%);
+    @include chapter($color, 0.74) {
+      background: url(awkward-stock/kiss-lick.jpg) 20% 20% no-repeat;
+      background-size: 150%;
+    }
   }
-}
-
-.factory2 {
-  $color: hsl(164, 50%, 64%);
-  @include chapter($color) {
-    background: url(factory2.jpg) -120px 0px;
-    background-size: 130%;
+  &.factory {
+    $color: hsl(45,60%,74%);
+    @include chapter($color, 0.54) {
+      background: url(awkward-stock/pencils.jpg) 100% 100% no-repeat;
+      background-size: 42%;
+    }
   }
-}
 
-.park {
-  $color: rgb(41, 176, 217);
-  @include chapter($color) {
-    background: url(park.jpg) -530px 0px;
-    background-size: 270%;
+  &.dinos {
+    $color: hsl(9,67%,64%);
+    @include chapter($color) {
+      background: url(dinos.jpg) -120px 0px;
+      background-size: 130%;
+    }
   }
-}
 
-.fernsehturm {
-  @include chapter(hsl(45,60%,74%)) {
-    background: url(fernsehturm.jpg) -120px 0px;
-    background-size: 130%;
+  &.cream {
+    $color: hsl(9,67%,64%);
+    @include chapter($color, .64) {
+      background: url(awkward-stock/cream.jpg) 50% 0px no-repeat;
+      background-size: 60%;
+    }
+  }
+
+  &.doc {
+    $color: hsl(164, 50%, 64%);
+    @include chapter($color, .78) {
+      background: url(awkward-stock/doc.jpg) -260px -30px;
+      background-size: 120%;
+    }
+  }
+
+  &.bear {
+    $color: hsl(180, 1%, 63%);
+    @include chapter($color, 0) {
+      background: url(awkward-stock/bear.jpg) 0% 20% no-repeat;
+      background-size: 100%;
+    }
+    h1 {
+      background: rgba(255, 255, 255, .7);
+    }
+  }
+
+  &.tool {
+    $color: hsl(180, 1%, 63%);
+    @include chapter($color, .7) {
+      background: url(awkward-stock/tool.jpg) 0% 40% no-repeat;
+      background-size: 120%;
+    }
+  }
+
+  &.park {
+    $color: rgb(41, 176, 217);
+    @include chapter($color, .64) {
+      background: url(awkward-stock/puppys-hilton.jpg) 0% 80% no-repeat;
+      background-size: 140%;
+      opacity: 1;
+    }
+  }
+
+  &.fernsehturm {
+    @include chapter(hsl(45,60%,74%)) {
+      background: url(fernsehturm.jpg) -120px 0px;
+      background-size: 130%;
+    }
   }
 }
 

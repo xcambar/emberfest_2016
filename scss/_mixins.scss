@@ -1,5 +1,5 @@
-@mixin chapter($color) {
-  background-color: change-color($color, $alpha: .84);
+@mixin chapter($color, $a: 0.84) {
+  background-color: change-color($color, $alpha: $a);
   color: change-color($color, $lightness: 14%);
   &:after {
     @content;
