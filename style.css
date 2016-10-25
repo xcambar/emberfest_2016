@@ -1,3 +1,8 @@
+.remark-preview-area .remark-slide-container {
+  visibility: visible; }
+  .remark-preview-area .remark-slide-container .remark-slide-content > * {
+    opacity: 1; }
+
 .remark-slide-container {
   display: block;
   visibility: hidden; }
@@ -19,12 +24,12 @@
     transition: opacity 300ms ease-out 700ms; }
 
 /* Colors */
-.remark-slide-container.remark-visible .remark-slide-content.grandpa {
-  background-color: rgba(255, 255, 255, 0.84);
+.remark-slide-container .remark-slide-content.angelephant {
+  background-color: rgba(255, 255, 255, 0.54);
   color: #242424; }
-  .remark-slide-container.remark-visible .remark-slide-content.grandpa:after {
-    background: url(awkward-stock/boxing-granpa.jpg) 100% 20% no-repeat;
-    background-size: 70%;
+  .remark-slide-container .remark-slide-content.angelephant:after {
+    background: url(awkward-stock/angelephant.jpg) 60% 20% no-repeat;
+    background-size: 130%;
     content: "";
     opacity: 0.5;
     top: 0;
@@ -33,10 +38,24 @@
     right: 0;
     position: absolute;
     z-index: -1; }
-.remark-slide-container.remark-visible .remark-slide-content.kiss {
+.remark-slide-container .remark-slide-content.grandpa {
+  background-color: rgba(255, 255, 255, 0.54);
+  color: #242424; }
+  .remark-slide-container .remark-slide-content.grandpa:after {
+    background: url(awkward-stock/boxing-granpa.jpg) 60% 20% no-repeat;
+    background-size: 130%;
+    content: "";
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1; }
+.remark-slide-container .remark-slide-content.kiss {
   background-color: rgba(228, 209, 149, 0.74);
   color: #392e0e; }
-  .remark-slide-container.remark-visible .remark-slide-content.kiss:after {
+  .remark-slide-container .remark-slide-content.kiss:after {
     background: url(awkward-stock/kiss-lick.jpg) 20% 20% no-repeat;
     background-size: 150%;
     content: "";
@@ -47,10 +66,10 @@
     right: 0;
     position: absolute;
     z-index: -1; }
-.remark-slide-container.remark-visible .remark-slide-content.factory {
+.remark-slide-container .remark-slide-content.factory {
   background-color: rgba(228, 209, 149, 0.54);
   color: #392e0e; }
-  .remark-slide-container.remark-visible .remark-slide-content.factory:after {
+  .remark-slide-container .remark-slide-content.factory:after {
     background: url(awkward-stock/pencils.jpg) 100% 100% no-repeat;
     background-size: 42%;
     content: "";
@@ -61,12 +80,12 @@
     right: 0;
     position: absolute;
     z-index: -1; }
-.remark-slide-container.remark-visible .remark-slide-content.dinos {
-  background-color: rgba(225, 120, 102, 0.84);
-  color: #3c130c; }
-  .remark-slide-container.remark-visible .remark-slide-content.dinos:after {
-    background: url(dinos.jpg) -120px 0px;
-    background-size: 130%;
+.remark-slide-container .remark-slide-content.bad-date {
+  background-color: rgba(228, 209, 149, 0.54);
+  color: #392e0e; }
+  .remark-slide-container .remark-slide-content.bad-date:after {
+    background: url(awkward-stock/bad-date.jpg) 100% 0% no-repeat;
+    background-size: 120%;
     content: "";
     opacity: 0.5;
     top: 0;
@@ -75,12 +94,26 @@
     right: 0;
     position: absolute;
     z-index: -1; }
-.remark-slide-container.remark-visible .remark-slide-content.cream {
+.remark-slide-container .remark-slide-content.happy-belly {
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #242424; }
+  .remark-slide-container .remark-slide-content.happy-belly:after {
+    background: url(awkward-stock/happy-belly.jpg) 100% 100% no-repeat white;
+    background-size: 40%;
+    content: "";
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1; }
+.remark-slide-container .remark-slide-content.axe {
   background-color: rgba(225, 120, 102, 0.64);
   color: #3c130c; }
-  .remark-slide-container.remark-visible .remark-slide-content.cream:after {
-    background: url(awkward-stock/cream.jpg) 50% 0px no-repeat;
-    background-size: 60%;
+  .remark-slide-container .remark-slide-content.axe:after {
+    background: url(awkward-stock/axe.jpg) 100% 70% no-repeat;
+    background-size: 120%;
     content: "";
     opacity: 0.5;
     top: 0;
@@ -89,10 +122,24 @@
     right: 0;
     position: absolute;
     z-index: -1; }
-.remark-slide-container.remark-visible .remark-slide-content.doc {
+.remark-slide-container .remark-slide-content.cream {
+  background-color: rgba(225, 120, 102, 0.64);
+  color: #3c130c; }
+  .remark-slide-container .remark-slide-content.cream:after {
+    background: url(awkward-stock/pencils.jpg) 100% 100% no-repeat;
+    background-size: 42%;
+    content: "";
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1; }
+.remark-slide-container .remark-slide-content.doc {
   background-color: rgba(117, 209, 185, 0.78);
   color: #12362c; }
-  .remark-slide-container.remark-visible .remark-slide-content.doc:after {
+  .remark-slide-container .remark-slide-content.doc:after {
     background: url(awkward-stock/doc.jpg) -260px -30px;
     background-size: 120%;
     content: "";
@@ -103,10 +150,10 @@
     right: 0;
     position: absolute;
     z-index: -1; }
-.remark-slide-container.remark-visible .remark-slide-content.bear {
+.remark-slide-container .remark-slide-content.bear {
   background-color: rgba(160, 162, 162, 0);
   color: #232424; }
-  .remark-slide-container.remark-visible .remark-slide-content.bear:after {
+  .remark-slide-container .remark-slide-content.bear:after {
     background: url(awkward-stock/bear.jpg) 0% 20% no-repeat;
     background-size: 100%;
     content: "";
@@ -117,12 +164,12 @@
     right: 0;
     position: absolute;
     z-index: -1; }
-  .remark-slide-container.remark-visible .remark-slide-content.bear h1 {
+  .remark-slide-container .remark-slide-content.bear h1 {
     background: rgba(255, 255, 255, 0.7); }
-.remark-slide-container.remark-visible .remark-slide-content.tool {
+.remark-slide-container .remark-slide-content.tool {
   background-color: rgba(160, 162, 162, 0.7);
   color: #232424; }
-  .remark-slide-container.remark-visible .remark-slide-content.tool:after {
+  .remark-slide-container .remark-slide-content.tool:after {
     background: url(awkward-stock/tool.jpg) 0% 40% no-repeat;
     background-size: 120%;
     content: "";
@@ -133,10 +180,10 @@
     right: 0;
     position: absolute;
     z-index: -1; }
-.remark-slide-container.remark-visible .remark-slide-content.park {
+.remark-slide-container .remark-slide-content.park {
   background-color: rgba(41, 176, 217, 0.64);
   color: #0b313d; }
-  .remark-slide-container.remark-visible .remark-slide-content.park:after {
+  .remark-slide-container .remark-slide-content.park:after {
     background: url(awkward-stock/puppys-hilton.jpg) 0% 80% no-repeat;
     background-size: 140%;
     opacity: 1;
@@ -148,10 +195,10 @@
     right: 0;
     position: absolute;
     z-index: -1; }
-.remark-slide-container.remark-visible .remark-slide-content.fernsehturm {
+.remark-slide-container .remark-slide-content.fernsehturm {
   background-color: rgba(228, 209, 149, 0.84);
   color: #392e0e; }
-  .remark-slide-container.remark-visible .remark-slide-content.fernsehturm:after {
+  .remark-slide-container .remark-slide-content.fernsehturm:after {
     background: url(fernsehturm.jpg) -120px 0px;
     background-size: 130%;
     content: "";
@@ -162,10 +209,10 @@
     right: 0;
     position: absolute;
     z-index: -1; }
-.remark-slide-container.remark-visible .remark-slide-content.happy {
+.remark-slide-container .remark-slide-content.happy {
   background-color: rgba(228, 209, 149, 0.84);
   color: #392e0e; }
-  .remark-slide-container.remark-visible .remark-slide-content.happy:after {
+  .remark-slide-container .remark-slide-content.happy:after {
     background: url(awkward-stock/happy.jpeg) -120px 0px;
     background-size: 110%;
     content: "";
@@ -304,5 +351,21 @@ img {
 
 .next_hidden + * {
   visibility: hidden; }
+
+.ember-logo {
+  background: transparent;
+  box-shadow: none;
+  padding: 0; }
+
+h1 .ember-logo {
+  width: 30%; }
+
+.remark-slide-content li {
+  font-size: 2rem;
+  list-style-type: none;
+  padding: .3em 0; }
+
+.remark-slide-content strong {
+  font-weight: bold; }
 
 /*# sourceMappingURL=style.css.map */

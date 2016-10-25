@@ -1,8 +1,23 @@
+class: middle, fernsehturm
+
+# Migrating to
+# <img class="ember-logo" src="ember-logo-red.svg"/>
+### A component-first approach
+
+???
+
+When you need to convince your coworkers, managers and CTO
+who are reluctant to throwing away years of hard work, even
+for the brilliance and confort that Ember provides.
+
+But before we go any further, I need to tell you something:
+I'm a player. So when Mike North sent out this tweet:
+
+---
+
 class: middle, grandpa
 
-# Warning
-
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Suggestion for <a href="https://twitter.com/EmberFest">@EmberFest</a> talks: all speakers to include at least one terrible stock photo. <a href="https://twitter.com/hashtag/emberjs?src=hash">#emberjs</a> <a href="https://twitter.com/mixonic">@mixonic</a> <a href="https://twitter.com/eaf4">@eaf4</a> <a href="https://twitter.com/alexspeller">@alexspeller</a> <a href="https://t.co/xRdrQ7Igs9">pic.twitter.com/xRdrQ7Igs9</a></p>&mdash; Mike North (@michaellnorth) <a href="https://twitter.com/michaellnorth/status/790295089079848961">October 23, 2016</a></blockquote>
+<blockquote class="twitter-tweet" data-cards="hidden" data-lang="en"><p lang="en" dir="ltr">Suggestion for <a href="https://twitter.com/EmberFest">@EmberFest</a> talks: all speakers to include at least one terrible stock photo. <a href="https://twitter.com/hashtag/emberjs?src=hash">#emberjs</a> <a href="https://twitter.com/mixonic">@mixonic</a> <a href="https://twitter.com/eaf4">@eaf4</a> <a href="https://twitter.com/alexspeller">@alexspeller</a> <a href="https://t.co/xRdrQ7Igs9">pic.twitter.com/xRdrQ7Igs9</a></p>&mdash; Mike North 🎃 (@michaellnorth) <a href="https://twitter.com/michaellnorth/status/790295089079848961">October 23, 2016</a></blockquote>
 
 ---
 class: middle, bear
@@ -28,22 +43,7 @@ class: middle, bear
 # Let's do it
 
 ---
-class: middle, kiss
-
-# Migrating an app to Ember
-## Component after Component
-
-???
-
-When you need to convince your coworkers, managers and CTO
-who are reluctant to throwing away years of hard work, even
-for the brilliance and confort that Ember provides.
-
-Briefly, some info about me.
-
----
-
-class: middle, kiss
+class: middle, happy-belly
 
 ## Xavier Cambar
 ## @xcambar
@@ -61,7 +61,7 @@ class: middle, kiss
 
 ---
 
-class: middle, factory
+class: middle, angelephant
 
 # Why not rewrite?
 ## "The greater good" <br/><small>Versus</small></br> "The cold hard truth"
@@ -71,8 +71,24 @@ class: middle, factory
 * Change everything
 * Start over from scratch
 
+## An example of an impossible rewrite
+
+In our case,
+* Market is very demanding
+* Features are constantly landed
+
+* The product must move on
+* **The show must go on**
+* The team already has a fast paced development
+* Considering to rewrite everything frm scratch and build a 1:1 Ember version of the existing is **madness**
+
+* Plus, we wanted an **early release** of the expected features
+
+* So we needed another way to get Ember into this app, as there was no way it would be replaced.
+* The thing is, it's not always obvious how you should proceed.
+
 ---
-class: middle, factory
+class: middle, angelephant
 
 ## The greater good
 <div class="next_hidden"></div>
@@ -86,7 +102,7 @@ class: middle, factory
   * A fantasticly helpful community
 
 ---
-class: middle, factory
+class: middle, angelephant
 
 ## The greater good
 ### Ember is *fantastic*
@@ -96,7 +112,7 @@ class: middle, factory
 The benefits come at a cost
 
 ---
-class: middle, factory
+class: middle, bad-date
 
 ## The cold hard truth
 <div class="next_hidden"></div>
@@ -114,18 +130,31 @@ class: middle, factory
 
 * A migration is mostly a rewrite of existing features, so it better be fast.
 
+* See https://github.com/emberjs/guides/issues/1708
+"Perspective of someone new to SPAs: Large tutorial in guides is incredibly confusing"
+
 ---
-class: middle, factory
+class: middle, bad-date
 
 ## The cold hard truth
 ### Ember is *scary*
 
 ???
 
+Ember is big, has a lot of concepts,
+there's no magic once you understand most of the details.
+
+I've been training people at Ember for 2 years.
+
+Thanks to the hard work of the doc team, the time to productivity has
+lowered, yet, the time-to-confidence has not.
+Productivity comes quick, but the need of assistance remains heavy
+for quite some time.
+
 ---
 class: middle, park
 
-# Non-invasive Ember
+# Integrable <img src="ember-logo.svg" class="ember-logo">
 ## for a smooth transition<br/>and a happier life
 
 ???
@@ -138,22 +167,6 @@ Somehow, for migration purposes, the docs should be read upside down.
 
 * Comparing to component-oriented libraries (react, Vue),
   Ember looks too difficult to slowly integrate
-
-## An example of impossible rewrite
-
-In our case,
-* Market is very demanding
-* Features are constantly landed
-
-* The product must move on
-* **The show must go on**
-* The team already has a fast paced development
-* Considering to rewrite everything frm scratch and build a 1:1 Ember version of the existing is **madness**
-
-* Plus, we wanted an **early release** of the expected features
-
-* So we needed another way to get Ember into this app, as there was no way it would be replaced.
-* The thing is, it's not always obvious how you should proceed.
 
 ### Epiphanies
 
@@ -168,7 +181,7 @@ Here are **a couple of golden rules** to remember for your migration.
 class: middle, cream
 
 ## Epiphany no 1
-# Ember is well-behaved
+# <img src="ember-logo-red.svg" class="ember-logo"> is well-behaved
 ### Corollary: The outside world is hostile
 
 ???
@@ -355,6 +368,20 @@ Fortunately, **Ember provides the tools to bootstrap your app as specifically as
 
 ---
 
+class: middle, doc
+
+# Nails and hammers
+### The required toolbox
+
+* ember-islands
+* ember-export-application-global
+
+???
+
+There is a very limited toolset required apart from core Ember.
+
+---
+
 class: center, middle, doc
 
 .center[<img src="Step 0.png"/>]
@@ -367,7 +394,10 @@ Let's consider that.
 
 * Remove the code in the template that generates the UL/LI, SELECT...
 * Turn that into a data structure
+* from ** DOM as state** to **DOM as view**
 * **Static HTML becomes configuration** (selected facets...)
+
+## Turn the state created by your server (and template engine) to JSON
 
 ---
 
@@ -612,8 +642,9 @@ General tip: Be careful.
 
 class: middle, center, tool
 
-# Use what you have
-### <small>with Ember-cli programmatically</small>
+### ember-cli all the way
+#Yes, it can.
+## can either <strong>supervise</strong> or <strong>integrate with</strong><br/>your build process.
 
 ???
 
@@ -643,9 +674,9 @@ class: middle, center, tool
 class: middle, happy
 
 ## Conclusion
-# Migrate to Ember!
+# <img src="ember-logo-red.svg" class="ember-logo"/> up your apps!
 
-### You have all the tools!
+## <small><em>(... and take over the world)</em></small>
 
 ???
 

@@ -1,5 +1,11 @@
 @import "mixins";
 
+.remark-preview-area .remark-slide-container {
+  visibility: visible;
+  .remark-slide-content > * {
+    opacity: 1;
+  }
+}
 .remark-slide-container {
   display: block;
   visibility: hidden;
@@ -30,12 +36,19 @@
 }
 
 /* Colors */
-.remark-slide-container.remark-visible .remark-slide-content {
+.remark-slide-container .remark-slide-content {
+  &.angelephant {
+    $color: white;
+    @include chapter($color, .54) {
+      background: url(awkward-stock/angelephant.jpg) 60% 20% no-repeat;
+      background-size: 130%;
+    }
+  }
   &.grandpa {
     $color: white;
-    @include chapter($color) {
-      background: url(awkward-stock/boxing-granpa.jpg) 100% 20% no-repeat;
-      background-size: 70%;
+    @include chapter($color, .54) {
+      background: url(awkward-stock/boxing-granpa.jpg) 60% 20% no-repeat;
+      background-size: 130%;
     }
   }
   &.kiss {
@@ -52,20 +65,34 @@
       background-size: 42%;
     }
   }
+  &.bad-date {
+    $color: hsl(45,60%,74%);
+    @include chapter($color, 0.54) {
+      background: url(awkward-stock/bad-date.jpg) 100% 0% no-repeat;
+      background-size: 120%;
+    }
+  }
 
-  &.dinos {
+  &.happy-belly {
+      @include chapter(white, .3) {
+        background: url(awkward-stock/happy-belly.jpg) 100% 100% no-repeat white;
+        background-size: 40%;
+    }
+  }
+
+  &.axe {
     $color: hsl(9,67%,64%);
-    @include chapter($color) {
-      background: url(dinos.jpg) -120px 0px;
-      background-size: 130%;
+    @include chapter($color, .64) {
+      background: url(awkward-stock/axe.jpg) 100% 70% no-repeat;
+      background-size: 120%;
     }
   }
 
   &.cream {
     $color: hsl(9,67%,64%);
     @include chapter($color, .64) {
-      background: url(awkward-stock/cream.jpg) 50% 0px no-repeat;
-      background-size: 60%;
+      background: url(awkward-stock/pencils.jpg) 100% 100% no-repeat;
+      background-size: 42%;
     }
   }
 
@@ -282,4 +309,23 @@ img {
 
 .next_hidden + * {
   visibility: hidden;
+}
+
+.ember-logo {
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+}
+h1 .ember-logo {
+  width: 30%;
+}
+
+.remark-slide-content li {
+  font-size: 2rem;
+  list-style-type: none;
+  padding: .3em 0;
+}
+
+.remark-slide-content strong {
+  font-weight: bold;
 }
