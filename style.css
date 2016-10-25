@@ -209,6 +209,20 @@
     right: 0;
     position: absolute;
     z-index: -1; }
+.remark-slide-container .remark-slide-content.sunflower {
+  background-color: rgba(228, 209, 149, 0.64);
+  color: #392e0e; }
+  .remark-slide-container .remark-slide-content.sunflower:after {
+    background: url(awkward-stock/sunflower.jpg) 220% 80%;
+    background-size: 110%;
+    content: "";
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1; }
 .remark-slide-container .remark-slide-content.happy {
   background-color: rgba(228, 209, 149, 0.84);
   color: #392e0e; }

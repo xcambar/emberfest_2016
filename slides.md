@@ -207,6 +207,8 @@ class: middle, cream
 
 ???
 
+ROUTABLE components FTW
+
 You go component after component, so it's only natural that at first,
 your app is just a component.
 
@@ -374,6 +376,7 @@ class: middle, doc
 ### The required toolbox
 
 * ember-islands
+* ember-cli-embedded
 * ember-export-application-global
 
 ???
@@ -439,10 +442,7 @@ class: middle, doc, bigger1
 let app = MyApp.create({ autoboot: false });
   let options = {
     location: 'none',
-    rootElement: '#location',
-    APP: {
-      facets: { /*...*/ }
-    }
+    rootElement: '#location'
   };
   App.visit('/', options).then((/* appInstance */) => {
     console.log('Smooth');
@@ -515,10 +515,58 @@ class: middle, doc, bigger2
 * You can also pass configuration, but I'd **avoid doing passing configuration**, I prefermy **config in the bootstrap JS code**.
 
 ---
-
-class: middle, tool
+class: middle, sunflower
 
 ## #3
+# State
+### how to deal with it?
+
+---
+class: middle, sunflower
+
+# Initial state
+## is set at initialization
+
+---
+class: middle, sunflower
+
+```js
+MyApp.start(config); // ember-cli-embedded
+```
+
+### ⚠️ `ember-cli-embedded` needs a PR for the `visit` API⚠️
+
+---
+class: middle, sunflower
+
+# Internal state
+## Component, Route or Service, you choose
+
+???
+
+* Component for when it impacts only this component
+* Route for when multi components are impacted within a route
+* Service for when the state impacts multiple routes
+
+---
+class: middle, sunflower
+
+# Shared state <br>with the host app
+
+## let's be conservative for a while
+
+???
+
+* We do not want to share objects
+* We do not want to leak objects
+* We want to share transitions/mutations
+
+# Ember has a best practice that can be applied here: DDAU
+
+---
+class: middle, tool
+
+## #4
 # Communication
 ## is key
 
