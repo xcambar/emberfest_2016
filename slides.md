@@ -1,12 +1,24 @@
 class: middle, fernsehturm
 
-# Migrating to
-# <img class="ember-logo" src="ember-logo-red.svg"/>
+# Our migration to <img class="ember-logo" src="ember-logo-red.svg"/>
 ### A component-first approach
+## Xavier Cambar - @xcambar
+.logo[<img src="./peopledoc.png"/>]
 
 ???
 
-When you need to convince your coworkers, managers and CTO
+### this is our story
+
+* PeopleDoc is an HR Company
+* We do Business Software
+* Our apps are **model- and processes-heavy**
+* **Definitively** ambitious!
+
+* We're hiring!
+* Remotely!
+
+=> It is possible
+Use it when you need to convince your coworkers, managers and CTO
 who are reluctant to throwing away years of hard work, even
 for the brilliance and confort that Ember provides.
 
@@ -41,23 +53,6 @@ class: middle, bear
 &nbsp;<br/>
 &nbsp;<br/>
 # Let's do it
-
----
-class: middle, happy-belly
-
-## Xavier Cambar
-## @xcambar
-.logo[<img src="./peopledoc.png"/>]
-
-???
-
-* PeopleDoc is an HR Company
-* We do Business Software
-* Our apps are **model- and processes-heavy**
-* **Definitively** ambitious!
-
-* We're hiring!
-* Remotely!
 
 ---
 
@@ -96,6 +91,8 @@ class: middle, angelephant
 
 ???
 
+## Take back control over frontend code
+
 * Ember has many benefits
   * Convention over configuration
   * High productivity
@@ -130,7 +127,7 @@ class: middle, bad-date
 
 * A migration is mostly a rewrite of existing features, so it better be fast.
 
-* See https://github.com/emberjs/guides/issues/1708
+* See issue by Lisa https://github.com/emberjs/guides/issues/1708
 "Perspective of someone new to SPAs: Large tutorial in guides is incredibly confusing"
 
 ---
@@ -158,6 +155,8 @@ class: middle, park
 ## for a smooth transition<br/>and a happier life
 
 ???
+
+* Read the docs backward
 
 Non-invasive ~= integrable
 
@@ -196,6 +195,12 @@ class: middle, cream
 * **Produce data for** and **consume data from** the host app
 
 * Don't expose more of your app than necessary!
+
+### Migration feels incomfortable
+* Being out of Ember realm is, to say the least, uneasy.
+* But you're in for a brighter future
+* Keep in mind the dirty -> cleaning -> clean path
+* Cleaning does not feel clean, and it is okay!
 
 ---
 
